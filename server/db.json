@@ -1,0 +1,327 @@
+{
+  "user": {
+    "id": 7,
+    "email": "email@email.com",
+    "password": "123",
+    "username": "Bertie",
+    "languages": [
+      { "id": 1, "code": "fr" },
+      { "id": 2, "code": "es" }
+    ],
+    "defaultLang": "en",
+    "targetLang": { "id": 1, "code": "fr" }
+  },
+  "languages": [
+    {
+      "id": 1,
+      "code": "fr"
+    },
+    {
+      "id": 2,
+      "code": "es"
+    }
+  ],
+  "decks": [
+    { "id": 1, "name": "Animals", "languageId": [1] },
+    { "id": 2, "name": "Family", "languageId": [1] },
+    { "id": 3, "name": "Date/Time", "languageId": [1] },
+    { "id": 4, "name": "Hobbies", "languageId": [1] },
+    { "id": 5, "name": "Weather", "languageId": [1] },
+    { "id": 6, "name": "Geography", "languageId": [1] },
+    { "id": 7, "name": "Sports", "languageId": [1] },
+    { "id": 8, "name": "Animals", "languageId": [2] },
+    { "id": 9, "name": "Family", "languageId": [2] },
+    { "id": 10, "name": "Date/Time", "languageId": [2] }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "from": "Father",
+      "fromLang": "EN",
+      "to": "Père",
+      "toLang": "FR",
+      "deckId": [2],
+      "languageId": [1]
+    },
+    {
+      "id": 2,
+      "from": "Dog",
+      "fromLang": "EN",
+      "to": "Chien",
+      "toLang": "FR",
+      "deckId": [1],
+      "languageId": [1]
+    },
+    {
+      "id": 3,
+      "from": "Cat",
+      "fromLang": "EN",
+      "to": "Chat",
+      "toLang": "FR",
+      "deckId": [1],
+      "languageId": [1]
+    },
+    {
+      "id": 4,
+      "from": "January",
+      "fromLang": "EN",
+      "to": "Janvier",
+      "toLang": "FR",
+      "deckId": [3],
+      "languageId": [1]
+    },
+    {
+      "id": 5,
+      "from": "Tennis",
+      "fromLang": "EN",
+      "to": "Tennis",
+      "toLang": "FR",
+      "deckId": [4, 7],
+      "languageId": [1]
+    },
+    {
+      "id": 6,
+      "from": "United Kingdom",
+      "fromLang": "EN",
+      "to": "Royaume-Uni",
+      "toLang": "FR",
+      "deckId": [6],
+      "languageId": [1]
+    },
+    {
+      "id": 7,
+      "from": "March",
+      "fromLang": "EN",
+      "to": "Mars",
+      "toLang": "FR",
+      "deckId": [3],
+      "languageId": [1]
+    },
+    {
+      "id": 8,
+      "from": "Germany",
+      "fromLang": "EN",
+      "to": "Allemagne",
+      "toLang": "FR",
+      "deckId": [6],
+      "languageId": [1]
+    },
+    {
+      "id": 9,
+      "from": "City",
+      "fromLang": "EN",
+      "to": "Ville",
+      "toLang": "FR",
+      "deckId": [6],
+      "languageId": [1]
+    },
+    {
+      "id": 10,
+      "from": "Rain",
+      "fromLang": "EN",
+      "to": "Pluie",
+      "toLang": "FR",
+      "deckId": [5],
+      "languageId": [1]
+    },
+    {
+      "id": 11,
+      "from": "Sun",
+      "fromLang": "EN",
+      "to": "Soleil",
+      "toLang": "FR",
+      "deckId": [5],
+      "languageId": [1]
+    },
+    {
+      "id": 12,
+      "from": "Sister",
+      "fromLang": "EN",
+      "to": "Soeur",
+      "toLang": "FR",
+      "deckId": [2],
+      "languageId": [1]
+    },
+    {
+      "id": 13,
+      "from": "Horse",
+      "fromLang": "EN",
+      "to": "Cheval",
+      "toLang": "FR",
+      "deckId": [1],
+      "languageId": [1]
+    },
+    {
+      "id": 14,
+      "from": "Brother",
+      "fromLang": "EN",
+      "to": "Frère",
+      "toLang": "FR",
+      "deckId": [2],
+      "languageId": [1]
+    },
+    {
+      "id": 15,
+      "from": "Climbing",
+      "fromLang": "EN",
+      "to": "Escalade",
+      "toLang": "FR",
+      "deckId": [4, 7],
+      "languageId": [1]
+    },
+    {
+      "id": 16,
+      "from": "Dance",
+      "fromLang": "EN",
+      "to": "Dance",
+      "toLang": "FR",
+      "deckId": [4, 7],
+      "languageId": [1]
+    },
+    {
+      "id": 17,
+      "from": "Grandfather",
+      "fromLang": "EN",
+      "to": "Grand-père",
+      "toLang": "FR",
+      "deckId": [2],
+      "languageId": [1]
+    },
+    {
+      "id": 18,
+      "from": "Yesterday",
+      "fromLang": "EN",
+      "to": "Hier",
+      "toLang": "FR",
+      "deckId": [3],
+      "languageId": [1]
+    },
+    {
+      "id": 19,
+      "from": "Bird",
+      "fromLang": "EN",
+      "to": "Oiseau",
+      "toLang": "FR",
+      "deckId": [1],
+      "languageId": [1]
+    },
+    {
+      "id": 20,
+      "from": "Photography",
+      "fromLang": "EN",
+      "to": "Photographie",
+      "toLang": "FR",
+      "deckId": [4],
+      "languageId": [1]
+    },
+    {
+      "id": 21,
+      "from": "Spain",
+      "fromLang": "EN",
+      "to": "Espagne",
+      "toLang": "FR",
+      "deckId": [6],
+      "languageId": [1]
+    },
+    {
+      "id": 22,
+      "from": "Mother",
+      "fromLang": "EN",
+      "to": "Mère",
+      "toLang": "FR",
+      "deckId": [2],
+      "languageId": [1]
+    },
+    {
+      "id": 23,
+      "from": "Tomorrow",
+      "fromLang": "EN",
+      "to": "Demain",
+      "toLang": "FR",
+      "deckId": [3],
+      "languageId": [1]
+    },
+    {
+      "id": 24,
+      "from": "Family",
+      "fromLang": "EN",
+      "to": "Famille",
+      "toLang": "FR",
+      "deckId": [2],
+      "languageId": [1]
+    },
+    {
+      "id": 25,
+      "from": "Fishing",
+      "fromLang": "EN",
+      "to": "Pêche",
+      "toLang": "FR",
+      "deckId": [4],
+      "languageId": [1]
+    },
+    {
+      "id": 26,
+      "from": "Country",
+      "fromLang": "EN",
+      "to": "Pays",
+      "toLang": "FR",
+      "deckId": [6],
+      "languageId": [1]
+    },
+
+    {
+      "id": 27,
+      "from": "Father",
+      "fromLang": "EN",
+      "to": "Padre",
+      "toLang": "ES",
+      "deckId": [9],
+      "languageId": [2]
+    },
+    {
+      "id": 28,
+      "from": "Dog",
+      "fromLang": "EN",
+      "to": "Perro",
+      "toLang": "ES",
+      "deckId": [8],
+      "languageId": [2]
+    },
+    {
+      "id": 29,
+      "from": "Cat",
+      "fromLang": "EN",
+      "to": "Gato",
+      "toLang": "ES",
+      "deckId": [8],
+      "languageId": [2]
+    },
+    {
+      "id": 30,
+      "from": "January",
+      "fromLang": "EN",
+      "to": "Enero",
+      "toLang": "ES",
+      "deckId": [10],
+      "languageId": [2]
+    },
+    {
+      "id": 31,
+      "from": "March",
+      "fromLang": "EN",
+      "to": "Marzo",
+      "toLang": "ES",
+      "deckId": [10],
+      "languageId": [2]
+    },
+    {
+      "id": 32,
+      "from": "Sister",
+      "fromLang": "EN",
+      "to": "Hermana",
+      "toLang": "ES",
+      "deckId": [9],
+      "languageId": [2]
+    }
+  ]
+}

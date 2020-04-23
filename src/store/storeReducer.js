@@ -1,0 +1,50 @@
+import methods from './reducerMethods';
+
+const storeReducer = (state, action) => {
+  switch (action.type) {
+    case 'ADD_USER':
+      console.log('ADD_USER');
+      return;
+    case 'ADD_DECK':
+      return methods.addNewDeck(state, action.payload.deck);
+    case 'ADD_CARD':
+      return;
+    case 'LOAD_USER':
+      console.log('LOAD_USER');
+      return;
+    case 'LOAD_USER_DATA':
+      console.log('LOAD_USER_DATA');
+      return;
+    case 'LOAD_DECKS':
+      return { ...state, decks: action.payload.decks, loading: false };
+    case 'LOAD_CARDS':
+      return;
+    case 'UPDATE_USER':
+      console.log('UPDATE_USER');
+      return;
+    case 'UPDATE_DECK':
+      return;
+    case 'UPDATE_CARD':
+      return;
+    case 'DELETE_USER':
+      console.log('DELETE_USER');
+      return;
+    case 'DELETE_DECK':
+      return;
+    case 'DELETE_CARD':
+      return;
+    case 'CHANGE_LANGUAGE':
+      return methods.changeLanguage(state, action.payload.lang);
+    case 'LOADING':
+      console.log('LOADING');
+      return { ...state, decks: [], loading: true };
+    case 'ERROR':
+      console.log('ERROR');
+      return { ...state, error: action.payload.error, loading: false };
+      return;
+    default:
+      throw new Error();
+  }
+};
+
+export default storeReducer;
