@@ -18,7 +18,8 @@ const storeReducer = (state, action) => {
     case 'LOAD_DECKS':
       return { ...state, decks: action.payload.decks, loading: false };
     case 'LOAD_CARDS':
-      return;
+      console.log('LOAD CARDS:', action.payload);
+      return methods.loadCards(state, action.payload);
     case 'UPDATE_USER':
       console.log('UPDATE_USER');
       return;
@@ -37,7 +38,7 @@ const storeReducer = (state, action) => {
       return methods.changeLanguage(state, action.payload.lang);
     case 'LOADING':
       console.log('LOADING');
-      return { ...state, decks: [], loading: true };
+      return { ...state, loading: true };
     case 'ERROR':
       console.log('ERROR');
       return { ...state, error: action.payload.error, loading: false };

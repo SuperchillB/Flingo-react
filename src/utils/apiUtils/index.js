@@ -35,6 +35,7 @@ export default class API {
     return axios.get(`${this.url}/${API_PATH.CARDS}`, config);
   };
   getCardsInDeck = (deckId = null, config = {}) => {
+    console.log('getCardsInDeck', deckId);
     if (!deckId || typeof deckId !== 'number') return false;
     return axios.get(
       `${this.url}/${API_PATH.DECKS}/${deckId}/${API_PATH.CARDS}`,
