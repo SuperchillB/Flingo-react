@@ -24,7 +24,9 @@ const Header = ({ onSelectLang }) => {
           <Link to="/">Decks</Link>
         </li>
         <li>
-          <Link to="/create">Create</Link>
+          <Link to="/create" state={{ referral: 'navbar' }}>
+            Create
+          </Link>
         </li>
         <li>
           <Link to="/quiz">Quiz</Link>
