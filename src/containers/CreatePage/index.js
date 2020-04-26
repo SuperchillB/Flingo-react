@@ -1,36 +1,28 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { store } from '../../store';
 import DeckInfo from '../../components/common/DeckInfo';
+import DeckSelection from '../../components/CreatePage/DeckSelection';
+import CardCreator from '../../components/common/CardCreator';
 
 const CreatePage = ({ location }) => {
   const { state, dispatch } = useContext(store);
-  const { referral } = location.state;
+  const { referral = 'navbar' } = location.state;
+
+  const handleSave = (data) => {
+    // dispatch new deck (with or without added card)
+    console.log('handleSave', data);
+  };
 
   return (
     <div>
       {referral === 'home' ? (
         <DeckInfo />
       ) : (
-        <div>
-          <h2>Select deck to add card to</h2>
-          <label htmlFor="deckList">
-            <select name="deckList" id="deckList">
-              {state.decks.map((deck) => (
-                <option key={deck.id} value={deck.id}>
-                  {deck.name}
-                </option>
-              ))}
-              <option value="newDeck">New deck</option>
-            </select>
-          </label>
-        </div>
+        <DeckSelection decks={state.decks} />
       )}
       <div>
         <h2>Create a card</h2>
-        <form onSubmit={() => {}}></form>
-      </div>
-      <div>
-        <button>Save</button>
+        <CardCreator onAddCard={handleSave} />
       </div>
     </div>
   );

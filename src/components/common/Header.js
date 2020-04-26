@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from '@reach/router';
+import { store } from '../../store';
 
 const Header = ({ onSelectLang }) => {
-  const selectLang = (e) => onSelectLang(e);
+  const { state } = useContext(store);
+
+  const selectLang = (e) => {
+    onSelectLang(e);
+  };
   return (
     <header>
       <div>
@@ -13,9 +18,13 @@ const Header = ({ onSelectLang }) => {
             onBlur={() => null}
             name="language-dropdown"
             id="language-dropdown"
+            value={state.user.targetLang.code}
           >
-            <option value="fr">French</option>
-            <option value="es">Spanish</option>
+            {state.user.languages.map((lang) => (
+              <option key={lang.id} value={lang.code}>
+                {lang.name}
+              </option>
+            ))}
           </select>
         </label>
       </div>
