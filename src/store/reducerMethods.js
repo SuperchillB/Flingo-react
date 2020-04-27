@@ -3,9 +3,11 @@ import DeckListItem from '../components/HomePage/DeckListItem';
 function addNewDeck(state, deck) {
   const decks = [...state.decks];
   const newDeck = {
+    id: deck.id,
     letter: deck.letter,
     name: deck.name,
     description: deck.description,
+    languageId: deck.languageId,
   };
   return { ...state, decks: [...state.decks, newDeck] };
 }

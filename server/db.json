@@ -5,11 +5,27 @@
     "password": "123",
     "username": "Bertie",
     "languages": [
-      { "id": 2, "code": "fr", "name": "Français" },
-      { "id": 3, "code": "es", "name": "Español" }
+      {
+        "id": 2,
+        "code": "fr",
+        "name": "Français"
+      },
+      {
+        "id": 3,
+        "code": "es",
+        "name": "Español"
+      }
     ],
-    "defaultLang": { "id": 1, "code": "en", "name": "English" },
-    "targetLang": { "id": 2, "code": "fr", "name": "Français" }
+    "defaultLang": {
+      "id": 1,
+      "code": "en",
+      "name": "English"
+    },
+    "targetLang": {
+      "id": 2,
+      "code": "fr",
+      "name": "Français"
+    }
   },
   "languages": [
     {
@@ -28,27 +44,90 @@
       "id": 1,
       "name": "Animals",
       "description": "Just a deck for animal-related stuff",
-      "languageId": [2]
+      "languageId": [
+        2
+      ]
     },
-    { "id": 2, "name": "Family", "description": "", "languageId": [2] },
-    { "id": 3, "name": "Date/Time", "description": "", "languageId": [2] },
+    {
+      "id": 2,
+      "name": "Family",
+      "description": "",
+      "languageId": [
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Date/Time",
+      "description": "",
+      "languageId": [
+        2
+      ]
+    },
     {
       "id": 4,
       "name": "Hobbies",
       "description": "Deck for hobbies",
-      "languageId": [2]
+      "languageId": [
+        2
+      ]
     },
-    { "id": 5, "name": "Weather", "description": "", "languageId": [2] },
-    { "id": 6, "name": "Geography", "description": "", "languageId": [2] },
-    { "id": 7, "name": "Sports", "description": "", "languageId": [2] },
-    { "id": 8, "name": "Animals", "description": "", "languageId": [3] },
+    {
+      "id": 5,
+      "name": "Weather",
+      "description": "",
+      "languageId": [
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Geography",
+      "description": "",
+      "languageId": [
+        2
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Sports",
+      "description": "",
+      "languageId": [
+        2
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Animals",
+      "description": "",
+      "languageId": [
+        3
+      ]
+    },
     {
       "id": 9,
       "name": "Family",
       "description": "Test description",
-      "languageId": [3]
+      "languageId": [
+        3
+      ]
     },
-    { "id": 10, "name": "Date/Time", "description": "", "languageId": [3] }
+    {
+      "id": 10,
+      "name": "Date/Time",
+      "description": "",
+      "languageId": [
+        3
+      ]
+    },
+    {
+      "name": "Test deck",
+      "description": "some random description",
+      "languageId": [
+        2
+      ],
+      "id": 11
+    }
   ],
   "cards": [
     {
@@ -57,8 +136,12 @@
       "fromLang": "en",
       "to": "Père",
       "toLang": "fr",
-      "deckId": [2],
-      "languageId": [2]
+      "deckId": [
+        2
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 2,
@@ -66,8 +149,12 @@
       "fromLang": "en",
       "to": "Chien",
       "toLang": "fr",
-      "deckId": [1],
-      "languageId": [2]
+      "deckId": [
+        1
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 3,
@@ -75,8 +162,12 @@
       "fromLang": "en",
       "to": "Chat",
       "toLang": "fr",
-      "deckId": [1],
-      "languageId": [2]
+      "deckId": [
+        1
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 4,
@@ -84,8 +175,12 @@
       "fromLang": "en",
       "to": "Janvier",
       "toLang": "fr",
-      "deckId": [3],
-      "languageId": [2]
+      "deckId": [
+        3
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 5,
@@ -93,8 +188,13 @@
       "fromLang": "en",
       "to": "Tennis",
       "toLang": "fr",
-      "deckId": [4, 7],
-      "languageId": [2]
+      "deckId": [
+        4,
+        7
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 6,
@@ -102,8 +202,12 @@
       "fromLang": "en",
       "to": "Royaume-Uni",
       "toLang": "fr",
-      "deckId": [6],
-      "languageId": [2]
+      "deckId": [
+        6
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 7,
@@ -111,8 +215,12 @@
       "fromLang": "en",
       "to": "Mars",
       "toLang": "fr",
-      "deckId": [3],
-      "languageId": [2]
+      "deckId": [
+        3
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 8,
@@ -120,8 +228,12 @@
       "fromLang": "en",
       "to": "Allemagne",
       "toLang": "fr",
-      "deckId": [6],
-      "languageId": [2]
+      "deckId": [
+        6
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 9,
@@ -129,8 +241,12 @@
       "fromLang": "en",
       "to": "Ville",
       "toLang": "fr",
-      "deckId": [6],
-      "languageId": [2]
+      "deckId": [
+        6
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 10,
@@ -138,8 +254,12 @@
       "fromLang": "en",
       "to": "Pluie",
       "toLang": "fr",
-      "deckId": [5],
-      "languageId": [2]
+      "deckId": [
+        5
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 11,
@@ -147,8 +267,12 @@
       "fromLang": "en",
       "to": "Soleil",
       "toLang": "fr",
-      "deckId": [5],
-      "languageId": [2]
+      "deckId": [
+        5
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 12,
@@ -156,8 +280,12 @@
       "fromLang": "en",
       "to": "Soeur",
       "toLang": "fr",
-      "deckId": [2],
-      "languageId": [2]
+      "deckId": [
+        2
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 13,
@@ -165,8 +293,12 @@
       "fromLang": "en",
       "to": "Cheval",
       "toLang": "fr",
-      "deckId": [1],
-      "languageId": [2]
+      "deckId": [
+        1
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 14,
@@ -174,8 +306,12 @@
       "fromLang": "en",
       "to": "Frère",
       "toLang": "fr",
-      "deckId": [2],
-      "languageId": [2]
+      "deckId": [
+        2
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 15,
@@ -183,8 +319,13 @@
       "fromLang": "en",
       "to": "Escalade",
       "toLang": "fr",
-      "deckId": [4, 7],
-      "languageId": [2]
+      "deckId": [
+        4,
+        7
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 16,
@@ -192,8 +333,13 @@
       "fromLang": "en",
       "to": "Dance",
       "toLang": "fr",
-      "deckId": [4, 7],
-      "languageId": [2]
+      "deckId": [
+        4,
+        7
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 17,
@@ -201,8 +347,12 @@
       "fromLang": "en",
       "to": "Grand-père",
       "toLang": "fr",
-      "deckId": [2],
-      "languageId": [2]
+      "deckId": [
+        2
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 18,
@@ -210,8 +360,12 @@
       "fromLang": "en",
       "to": "Hier",
       "toLang": "fr",
-      "deckId": [3],
-      "languageId": [2]
+      "deckId": [
+        3
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 19,
@@ -219,8 +373,12 @@
       "fromLang": "en",
       "to": "Oiseau",
       "toLang": "fr",
-      "deckId": [1],
-      "languageId": [2]
+      "deckId": [
+        1
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 20,
@@ -228,8 +386,12 @@
       "fromLang": "en",
       "to": "Photographie",
       "toLang": "fr",
-      "deckId": [4],
-      "languageId": [2]
+      "deckId": [
+        4
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 21,
@@ -237,8 +399,12 @@
       "fromLang": "en",
       "to": "Espagne",
       "toLang": "fr",
-      "deckId": [6],
-      "languageId": [2]
+      "deckId": [
+        6
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 22,
@@ -246,8 +412,12 @@
       "fromLang": "en",
       "to": "Mère",
       "toLang": "fr",
-      "deckId": [2],
-      "languageId": [2]
+      "deckId": [
+        2
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 23,
@@ -255,8 +425,12 @@
       "fromLang": "en",
       "to": "Demain",
       "toLang": "fr",
-      "deckId": [3],
-      "languageId": [2]
+      "deckId": [
+        3
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 24,
@@ -264,8 +438,12 @@
       "fromLang": "en",
       "to": "Famille",
       "toLang": "fr",
-      "deckId": [2],
-      "languageId": [2]
+      "deckId": [
+        2
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 25,
@@ -273,8 +451,12 @@
       "fromLang": "en",
       "to": "Pêche",
       "toLang": "fr",
-      "deckId": [4],
-      "languageId": [2]
+      "deckId": [
+        4
+      ],
+      "languageId": [
+        2
+      ]
     },
     {
       "id": 26,
@@ -282,18 +464,25 @@
       "fromLang": "en",
       "to": "Pays",
       "toLang": "fr",
-      "deckId": [6],
-      "languageId": [2]
+      "deckId": [
+        6
+      ],
+      "languageId": [
+        2
+      ]
     },
-
     {
       "id": 27,
       "from": "Father",
       "fromLang": "en",
       "to": "Padre",
       "toLang": "ES",
-      "deckId": [9],
-      "languageId": [3]
+      "deckId": [
+        9
+      ],
+      "languageId": [
+        3
+      ]
     },
     {
       "id": 28,
@@ -301,8 +490,12 @@
       "fromLang": "en",
       "to": "Perro",
       "toLang": "es",
-      "deckId": [8],
-      "languageId": [3]
+      "deckId": [
+        8
+      ],
+      "languageId": [
+        3
+      ]
     },
     {
       "id": 29,
@@ -310,8 +503,12 @@
       "fromLang": "en",
       "to": "Gato",
       "toLang": "es",
-      "deckId": [8],
-      "languageId": [3]
+      "deckId": [
+        8
+      ],
+      "languageId": [
+        3
+      ]
     },
     {
       "id": 30,
@@ -319,8 +516,12 @@
       "fromLang": "en",
       "to": "Enero",
       "toLang": "es",
-      "deckId": [10],
-      "languageId": [3]
+      "deckId": [
+        10
+      ],
+      "languageId": [
+        3
+      ]
     },
     {
       "id": 31,
@@ -328,8 +529,12 @@
       "fromLang": "en",
       "to": "Marzo",
       "toLang": "es",
-      "deckId": [10],
-      "languageId": [3]
+      "deckId": [
+        10
+      ],
+      "languageId": [
+        3
+      ]
     },
     {
       "id": 32,
@@ -337,8 +542,12 @@
       "fromLang": "en",
       "to": "Hermana",
       "toLang": "es",
-      "deckId": [9],
-      "languageId": [3]
+      "deckId": [
+        9
+      ],
+      "languageId": [
+        3
+      ]
     }
   ]
 }

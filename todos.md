@@ -1,3 +1,4 @@
 - Create useLocalStorage custom hook to store API calls in localStorage
 - Create useFetch custom hook used in each page view
 - Create route guards
+- Add complete form validation/sanitisation for DeckInfo.js
