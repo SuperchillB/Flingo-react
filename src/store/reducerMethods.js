@@ -17,8 +17,13 @@ function changeLanguage(state, lang) {
   const newSelectedLang = {
     id: state.user.languages.find((l) => l.code === lang).id,
     code: lang,
+    name: state.user.languages.find((l) => l.code === lang).name,
   };
-  return { ...state, currentTargetLang: newSelectedLang };
+  return {
+    ...state,
+    user: { ...state.user, targetLang: newSelectedLang },
+    currentTargetLang: newSelectedLang,
+  };
 }
 
 function loadCards(state, { cards, deckId }) {
