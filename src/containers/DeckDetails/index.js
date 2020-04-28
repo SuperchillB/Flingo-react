@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { store } from '../../store';
+import DeckInfo from '../../components/common/DeckInfo';
+import CardCreator from '../../components/common/CardCreator';
 import CardsList from '../../components/DeckDetails/CardsList';
 import { API_BASE_URL } from '../../constants/apiConstants';
 import API from '../../utils/apiUtils';
@@ -8,6 +10,10 @@ import axios from 'axios';
 const DeckDetails = ({ deckId, location }) => {
   const { state, dispatch } = useContext(store);
   console.log('DeckDetails', state);
+
+  const handleSaveCard = () => {
+    console.log('handleSaveCard');
+  };
 
   useEffect(() => {
     dispatch({ type: 'LOADING' });
@@ -49,15 +55,19 @@ const DeckDetails = ({ deckId, location }) => {
 
   return (
     <div>
+      <div>
+        <DeckInfo {...state.decks.find((deck) => deck.id === Number(deckId))} />
+        <CardCreator deckId={Number(deckId)} onAddCard={handleSaveCard} />
+      </div>
+      <CardsList
+        deck={state.decks.find((deck) => deck.id === Number(deckId))}
+      />
       <h1>Deck id: {deckId}</h1>
       <ul>
         <li>ID: {location.state.id}</li>
         <li>Letter: {location.state.letter}</li>
         <li>Name: {location.state.name}</li>
       </ul>
-      <CardsList
-        deck={state.decks.find((deck) => deck.id === Number(deckId))}
-      />
     </div>
   );
 };

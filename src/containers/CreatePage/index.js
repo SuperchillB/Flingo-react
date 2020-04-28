@@ -1,28 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { store } from '../../store';
 import DeckInfo from '../../components/common/DeckInfo';
 import DeckSelection from '../../components/CreatePage/DeckSelection';
 import CardCreator from '../../components/common/CardCreator';
+import { navigate } from '@reach/router';
 
 const CreatePage = ({ location }) => {
-  const { state, dispatch } = useContext(store);
+  const { state } = useContext(store);
   const { referral = 'navbar' } = location.state;
+  const [deckId, setDeckId] = useState(null);
 
-  const handleSave = (data) => {
-    // dispatch new deck (with or without added card)
-    console.log('handleSave', data);
-  };
+  // Update new deck ID once created so CardCreator is aware of it
+  const handleSaveDeck = (id) => setDeckId(id);
+
+  const handleSaveCard = () => navigate(`/decks/${deckId}`);
 
   return (
     <div>
       {referral === 'home' ? (
-        <DeckInfo />
+        <DeckInfo onSaveDeck={handleSaveDeck} />
       ) : (
-        <DeckSelection decks={state.decks} />
+        <DeckSelection decks={state.decks} onSaveDeck={handleSaveDeck} />
       )}
       <div>
         <h2>Create a card</h2>
-        <CardCreator onAddCard={handleSave} />
+        <CardCreator deckId={deckId} onAddCard={handleSaveCard} />
       </div>
     </div>
   );

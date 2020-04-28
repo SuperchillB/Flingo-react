@@ -9,12 +9,15 @@ const DeckInfo = ({
   letter = '',
   name = '',
   description = '',
-  onHideDropdown,
+  onHideDropdown = () => {},
+  onSaveDeck = () => {},
+  referral = 'home',
 }) => {
   const { state, dispatch } = useContext(store);
   const [deckData, setDeckData] = useState({
     id,
     name,
+    letter,
     description,
     languageId: state.user.targetLang.id,
   });
@@ -68,13 +71,16 @@ const DeckInfo = ({
         ...response.data,
         cards: [],
       };
-      // dispatch to reducer
+      // Dispatch to reducer
       dispatch({
         type: action,
         payload: {
           deck: data,
         },
       });
+      // Tell parent new deck is created so CardCreator can enable card creation
+      // ? ONLY FOR POST? OR FOR PUT TOO?
+      if (method === 'POST') onSaveDeck(data.id);
     } catch (error) {
       dispatch({
         type: 'ERROR',
@@ -92,7 +98,7 @@ const DeckInfo = ({
 
   return (
     <div>
-      <div>{letter}</div>
+      <div>{deckData.letter}</div>
       <div>
         <label htmlFor="deckTitle">
           <input
@@ -119,7 +125,11 @@ const DeckInfo = ({
         </label>
       </div>
       <div>
-        <button onClick={(e) => handleHideDropdown(e)}>Change deck</button>
+        {referral !== 'home' && (
+          <button onClick={(e) => handleHideDropdown(e)}>
+            Change deck (back btn)
+          </button>
+        )}
         <button onClick={handleSaveDeck}>Save</button>
       </div>
     </div>

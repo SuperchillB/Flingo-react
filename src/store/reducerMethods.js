@@ -1,15 +1,20 @@
-import DeckListItem from '../components/HomePage/DeckListItem';
-
 function addNewDeck(state, deck) {
   const decks = [...state.decks];
+  console.log('addNewDeck', deck);
   const newDeck = {
     id: deck.id,
     letter: deck.letter,
     name: deck.name,
     description: deck.description,
     languageId: deck.languageId,
+    cards: [],
   };
   return { ...state, decks: [...state.decks, newDeck] };
+}
+
+function addNewCard(state, card) {
+  state.decks.find((deck) => deck.id === card.deckId[0]).cards.push(card);
+  return { ...state };
 }
 
 function changeLanguage(state, lang) {
@@ -29,7 +34,7 @@ function changeLanguage(state, lang) {
 function loadCards(state, { cards, deckId }) {
   // update decks one by one as cards are being loaded each time deck is clicked on
   const updatedDecks = state.decks.map((deck) => {
-    if (deck.id === deckId) return { ...deck, cards: cards };
+    if (deck.id === deckId) return { ...deck, cards: cards }; // TODO: remove cards here and instead add cards: [] in addNewDeck above?
     return deck;
   });
   return { ...state, decks: updatedDecks };
@@ -37,6 +42,7 @@ function loadCards(state, { cards, deckId }) {
 
 export default {
   addNewDeck,
+  addNewCard,
   changeLanguage,
   loadCards,
 };

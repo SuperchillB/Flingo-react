@@ -121,8 +121,8 @@
       ]
     },
     {
-      "name": "Test deck",
-      "description": "some random description",
+      "name": "Kitchen",
+      "description": "",
       "languageId": [
         2
       ],
@@ -548,6 +548,58 @@
       "languageId": [
         3
       ]
+    },
+    {
+      "from": "Greece",
+      "fromLang": 1,
+      "to": "Grèce",
+      "toLang": 2,
+      "deckId": [
+        6
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 33
+    },
+    {
+      "from": "Bowl",
+      "fromLang": 1,
+      "to": "Bol",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 34
+    },
+    {
+      "from": "Spoon",
+      "fromLang": 1,
+      "to": "Cuillère",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 35
+    },
+    {
+      "from": "Fork",
+      "fromLang": 1,
+      "to": "Fourchette",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 36
     }
   ]
 }

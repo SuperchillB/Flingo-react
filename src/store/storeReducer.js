@@ -8,7 +8,7 @@ const storeReducer = (state, action) => {
     case 'ADD_DECK':
       return methods.addNewDeck(state, action.payload.deck);
     case 'ADD_CARD':
-      return;
+      return methods.addNewCard(state, action.payload.card);
     case 'LOAD_USER':
       console.log('LOAD_USER');
       return;

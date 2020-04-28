@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DeckInfo from '../../components/common/DeckInfo';
 
-const DeckSelection = ({ decks }) => {
+const DeckSelection = ({ decks, onSaveDeck }) => {
   const [hideDropdown, setHideDropdown] = useState(false);
   const [selectedDeck, setSelectedDeck] = useState('default');
 
@@ -13,6 +13,8 @@ const DeckSelection = ({ decks }) => {
   const handleHideDropdown = (e) => {
     console.log(e.target);
     setSelectedDeck(e.target.value);
+    // Send deck id to parent so it can be updated in CardCreator
+    onSaveDeck(Number(e.target.value));
     if (e.target.value === 'newDeck') {
       setHideDropdown(true);
     } else {
@@ -20,11 +22,17 @@ const DeckSelection = ({ decks }) => {
     }
   };
 
+  const passSaveDeckToParent = (id) => onSaveDeck(id);
+
   return (
     <>
       {hideDropdown ? (
         <div>
-          <DeckInfo onHideDropdown={handleHideDropdown} />
+          <DeckInfo
+            referral="navbar"
+            onHideDropdown={handleHideDropdown}
+            onSaveDeck={passSaveDeckToParent}
+          />
         </div>
       ) : (
         <div>
