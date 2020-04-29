@@ -45,32 +45,52 @@ const DeckInfo = ({
   };
 
   const saveDeck = async (method, action) => {
-    // Prepare JSON data to post/put
-    const deckDetails = JSON.stringify({
-      name: deckData.name,
-      description: deckData.description,
-      languageId: [state.user.targetLang.id],
-    });
     // Create API instance
     const api = new API({ url: API_BASE_URL.USERDATA[process.env.NODE_ENV] });
     // Create new token for the request
     let source = axios.CancelToken.source(); // TODO: refactor token cancelation inside apiUtils
     try {
       let response;
+      let data;
       // Prepare payload for API request method
       const payload = {
         cancelToken: source.token,
         headers: { 'Content-Type': 'application/json' },
       };
       // POST or PUT
-      if (method === 'POST')
-        response = await api.postDeck(deckDetails, payload);
-      if (method === 'PUT') response = await api.putDeck(deckDetails, payload);
-      // Add cards property for global state
-      const data = {
-        ...response.data,
-        cards: [],
-      };
+      if (method === 'POST') {
+        response = await api.postDeck(
+          JSON.stringify({
+            name: deckData.name,
+            description: deckData.description,
+            languageId: [state.user.targetLang.id],
+          }),
+          payload,
+        );
+        // Add cards property for global state
+        data = {
+          ...response.data,
+          cards: [],
+        };
+      }
+      if (method === 'PUT') {
+        response = await api.putDeck(
+          JSON.stringify({
+            id: deckData.id,
+            name: deckData.name,
+            description: deckData.description,
+            languageId: [state.user.targetLang.id],
+          }),
+          payload,
+        );
+        // Don't add empty cards property here or else existing cards will be gone
+        data = { ...response.data };
+      }
+      // // Add cards property for global state
+      // const data = {
+      //   ...response.data,
+      //   cards: [],
+      // };
       // Dispatch to reducer
       dispatch({
         type: action,

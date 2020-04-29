@@ -15,50 +15,54 @@ const HomePage = () => {
   useEffect(() => {
     dispatch({ type: 'LOADING' });
     console.log('useEffect HomePage', state);
-    // if (state.decks.length === 0) {
-    // Create API instance
-    const api = new API({ url: API_BASE_URL.USERDATA[process.env.NODE_ENV] });
-    // Create new token for the request
-    let source = axios.CancelToken.source(); // TODO: refactor token cancelation inside apiUtils
+    if (state.decks && state.decks.length === 0) {
+      // Create API instance
+      const api = new API({ url: API_BASE_URL.USERDATA[process.env.NODE_ENV] });
+      // Create new token for the request
+      let source = axios.CancelToken.source(); // TODO: refactor token cancelation inside apiUtils
 
-    const fetchDecks = async () => {
-      // TODO: refactor async/await inside apiUtils
-      try {
-        const response = await api.getDecksInLang(state.currentTargetLang.id, {
-          cancelToken: source.token,
-        });
-        // setState(state => (
-        // 	{ ...state, decks: response.data }
-        // ));
-        // setDecks(response.data);
-        // TODO: refactor properties inside each deck ("letter" vs "logo", "description", ...)
-        const data = response.data.map((el) => ({
-          ...el,
-          letter: el.name[0].toUpperCase(),
-          cards: [],
-        }));
-        dispatch({
-          type: 'LOAD_DECKS',
-          payload: {
-            decks: data,
-          },
-        });
-      } catch (error) {
-        dispatch({
-          type: 'ERROR',
-          payload: { error },
-        });
-        if (!axios.isCancel(error)) {
-          throw error;
+      const fetchDecks = async () => {
+        // TODO: refactor async/await inside apiUtils
+        try {
+          const response = await api.getDecksInLang(
+            state.currentTargetLang.id,
+            {
+              cancelToken: source.token,
+            },
+          );
+          //// TODO: refactor properties inside each deck ("letter" vs "logo", "description", ...)
+          // const data = response.data.map((el) => ({
+          //   ...el,
+          //   letter: el.name[0].toUpperCase(),
+          //   cards: [],
+          // }));
+          dispatch({
+            type: 'LOAD_DECKS',
+            payload: {
+              decks: response.data,
+            },
+          });
+        } catch (error) {
+          dispatch({
+            type: 'ERROR',
+            payload: { error },
+          });
+          if (!axios.isCancel(error)) {
+            throw error;
+          }
         }
-      }
-    };
-    fetchDecks();
-    // when unmounting component, cancel axios token
-    return () => {
-      source.cancel();
-    };
-    // }
+      };
+      fetchDecks();
+      // when unmounting component, cancel axios token
+      return () => {
+        source.cancel();
+      };
+    } else {
+      dispatch({
+        type: 'LOAD_DECKS',
+        payload: {},
+      });
+    }
   }, [state.currentTargetLang]);
 
   return (

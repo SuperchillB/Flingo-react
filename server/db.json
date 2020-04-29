@@ -121,12 +121,12 @@
       ]
     },
     {
+      "id": 11,
       "name": "Kitchen",
       "description": "",
       "languageId": [
         2
-      ],
-      "id": 11
+      ]
     }
   ],
   "cards": [
@@ -600,6 +600,32 @@
         2
       ],
       "id": 36
+    },
+    {
+      "from": "Knife",
+      "fromLang": 1,
+      "to": "Couteau",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 37
+    },
+    {
+      "from": "Plate",
+      "fromLang": 1,
+      "to": "Assiette",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 38
     }
   ]
 }

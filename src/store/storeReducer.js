@@ -16,15 +16,15 @@ const storeReducer = (state, action) => {
       console.log('LOAD_USER_DATA');
       return;
     case 'LOAD_DECKS':
-      return { ...state, decks: action.payload.decks, loading: false };
+      // return { ...state, decks: action.payload.decks, loading: false };
+      return methods.loadDecks(state, action.payload.decks);
     case 'LOAD_CARDS':
-      console.log('LOAD CARDS:', action.payload);
       return methods.loadCards(state, action.payload);
     case 'UPDATE_USER':
       console.log('UPDATE_USER');
       return;
     case 'UPDATE_DECK':
-      return;
+      return methods.updateDeck(state, action.payload.deck);
     case 'UPDATE_CARD':
       return;
     case 'DELETE_USER':
@@ -42,7 +42,6 @@ const storeReducer = (state, action) => {
     case 'ERROR':
       console.log('ERROR');
       return { ...state, error: action.payload.error, loading: false };
-      return;
     default:
       throw new Error();
   }

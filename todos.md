@@ -2,3 +2,5 @@
 - Create useFetch custom hook used in each page view
 - Create route guards
 - Add complete form validation/sanitisation for DeckInfo.js
+- Add dynamic imports
+- Create logic to cache API calls if not using localStorage

@@ -69,11 +69,13 @@ export default class API {
   // PUT
   putDeck = (deck = {}, config = {}) => {
     if (!deck || isEmpty(deck)) return false;
-    return axios.put(`${this.url}/${API_PATH.DECKS}/${deck.id}`, deck, config);
+    const deckId = JSON.parse(deck).id;
+    return axios.put(`${this.url}/${API_PATH.DECKS}/${deckId}`, deck, config);
   };
   putCard = (card = {}, config = {}) => {
     if (!card || isEmpty(card)) return false;
-    return axios.put(`${this.url}/${API_PATH.CARDS}/${card.id}`, card, config);
+    const cardId = JSON.parse(card).id;
+    return axios.put(`${this.url}/${API_PATH.CARDS}/${cardId}`, card, config);
   };
 
   // PATCH

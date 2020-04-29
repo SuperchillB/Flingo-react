@@ -1,6 +1,5 @@
 function addNewDeck(state, deck) {
   const decks = [...state.decks];
-  console.log('addNewDeck', deck);
   const newDeck = {
     id: deck.id,
     letter: deck.letter,
@@ -10,6 +9,16 @@ function addNewDeck(state, deck) {
     cards: [],
   };
   return { ...state, decks: [...state.decks, newDeck] };
+}
+
+function updateDeck(state, updatedDeck) {
+  const foundIndex = state.decks.findIndex((deck) => deck.id == updatedDeck.id);
+  state.decks[foundIndex] = Object.assign(
+    {},
+    state.decks[foundIndex],
+    updatedDeck,
+  );
+  return { ...state };
 }
 
 function addNewCard(state, card) {
@@ -31,13 +40,39 @@ function changeLanguage(state, lang) {
   };
 }
 
-function loadCards(state, { cards, deckId }) {
-  // update decks one by one as cards are being loaded each time deck is clicked on
-  const updatedDecks = state.decks.map((deck) => {
-    if (deck.id === deckId) return { ...deck, cards: cards }; // TODO: remove cards here and instead add cards: [] in addNewDeck above?
-    return deck;
-  });
-  return { ...state, decks: updatedDecks };
+function loadDecks(state, decks = []) {
+  // First load only
+  if (decks.length > 0) {
+    const completeDecks = decks.map((deck) => {
+      const currentDeckInState = state.decks.find((d) => d.id === deck.id);
+      // make sure not to overwrite preloaded cards
+      if (
+        currentDeckInState &&
+        currentDeckInState.cards &&
+        currentDeckInState.cards.length > 0
+      )
+        return { ...currentDeckInState };
+      // add cards prop if no cards loaded yet
+      return { ...deck, letter: deck.name[0].toUpperCase(), cards: [] }; // TODO: refactor properties inside each deck ("letter" vs "logo", "description", ...)
+    });
+    return { ...state, decks: completeDecks, loading: false };
+  }
+  // Return cached decks
+  return { ...state, loading: false };
+}
+
+function loadCards(state, { cards = [], deckId = null }) {
+  // First load only
+  if (cards.length > 0) {
+    // update decks one by one as cards are being loaded each time deck is clicked on
+    const updatedDecks = state.decks.map((deck) => {
+      if (deck.id === deckId) return { ...deck, cards: cards }; // TODO: remove cards here and instead add cards: [] in addNewDeck above?
+      return deck;
+    });
+    return { ...state, decks: updatedDecks };
+  }
+  // Return cached cards
+  return { ...state };
 }
 
 export default {
@@ -45,4 +80,6 @@ export default {
   addNewCard,
   changeLanguage,
   loadCards,
+  loadDecks,
+  updateDeck,
 };
