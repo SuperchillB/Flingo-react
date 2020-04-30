@@ -13,7 +13,9 @@ const CreatePage = ({ location }) => {
   // Update new deck ID once created so CardCreator is aware of it
   const handleSaveDeck = (id) => setDeckId(id);
 
-  const handleSaveCard = () => navigate(`/decks/${deckId}`);
+  const handleSaveCard = () =>
+    // navigate(`/decks/${deckId}`, { state: { fromCreatePage: true } }); // TODO: ADD REFERRAL HERE to distinguish where we came from when being redirected to DeckDetails
+    navigate(`/decks/${deckId}`); // TODO: ADD REFERRAL HERE to distinguish where we came from when being redirected to DeckDetails
 
   return (
     <div>

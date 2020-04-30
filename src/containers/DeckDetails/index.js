@@ -17,9 +17,10 @@ const DeckDetails = ({ deckId, location }) => {
 
   useEffect(() => {
     dispatch({ type: 'LOADING' });
-    console.log('useEffect DeckDetails', state);
+    console.log('useEffect DeckDetails', state, location);
     const currentDeck = state.decks.find((d) => d.id === Number(deckId));
     if (currentDeck.cards && currentDeck.cards.length === 0) {
+      // if (currentDeck.cards && currentDeck.cards.length === 0 || location.state.fromCreatePage) {
       // Create API instance
       const api = new API({ url: API_BASE_URL.USERDATA[process.env.NODE_ENV] });
       // Create new token for the request
@@ -54,6 +55,8 @@ const DeckDetails = ({ deckId, location }) => {
         source.cancel();
       };
     } else {
+      // If cards were already pre-fetched in this deck don't pass in cards in payload
+      // This will prevent a new cards load
       dispatch({
         type: 'LOAD_CARDS',
         payload: {

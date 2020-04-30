@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { Link } from '@reach/router';
 import { store } from '../../store';
 import DecksList from '../../components/HomePage/DecksList';
@@ -10,12 +10,19 @@ import axios from 'axios';
 const HomePage = () => {
   const { state, dispatch } = useContext(store);
   const [isAuth, setIsAuth] = useState(true);
+  const prevTargetLang = useRef(state.currentTargetLang);
   // const [state, dispatch] = useApi(GET_DECKS_IN_LANG, {}, []); // ! TEST
 
   useEffect(() => {
     dispatch({ type: 'LOADING' });
-    console.log('useEffect HomePage', state);
-    if (state.decks && state.decks.length === 0) {
+    console.log('useEffect HomePage', {
+      state,
+      prevTargetLang: prevTargetLang.current,
+    });
+    if (
+      (state.decks && state.decks.length === 0) ||
+      prevTargetLang.current !== state.currentTargetLang
+    ) {
       // Create API instance
       const api = new API({ url: API_BASE_URL.USERDATA[process.env.NODE_ENV] });
       // Create new token for the request

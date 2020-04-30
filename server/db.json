@@ -127,6 +127,22 @@
       "languageId": [
         2
       ]
+    },
+    {
+      "name": "Test",
+      "description": "",
+      "languageId": [
+        2
+      ],
+      "id": 12
+    },
+    {
+      "name": "Test spanish",
+      "description": "",
+      "languageId": [
+        3
+      ],
+      "id": 13
     }
   ],
   "cards": [
@@ -626,6 +642,279 @@
         2
       ],
       "id": 38
+    },
+    {
+      "from": "Chopsticks",
+      "fromLang": 1,
+      "to": "Baguettes",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 39
+    },
+    {
+      "from": "Pepper",
+      "fromLang": 1,
+      "to": "Poivre",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 40
+    },
+    {
+      "from": "Salt",
+      "fromLang": 1,
+      "to": "Sel",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 41
+    },
+    {
+      "from": "Spices",
+      "fromLang": 1,
+      "to": "Épices",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 42
+    },
+    {
+      "from": "Wine",
+      "fromLang": 1,
+      "to": "Vin",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 43
+    },
+    {
+      "from": "Table",
+      "fromLang": 1,
+      "to": "Table",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 44
+    },
+    {
+      "from": "Chair",
+      "fromLang": 1,
+      "to": "Chaise",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 45
+    },
+    {
+      "from": "Water",
+      "fromLang": 1,
+      "to": "Eau",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 46
+    },
+    {
+      "from": "Coffee",
+      "fromLang": 1,
+      "to": "Café",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 47
+    },
+    {
+      "from": "Mug",
+      "fromLang": 1,
+      "to": "Tasse",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 48
+    },
+    {
+      "from": "Juice",
+      "fromLang": 1,
+      "to": "Jus",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 49
+    },
+    {
+      "from": "Spatula",
+      "fromLang": 1,
+      "to": "Spatule",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 50
+    },
+    {
+      "from": "Bottle",
+      "fromLang": 1,
+      "to": "Bouteille",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 51
+    },
+    {
+      "from": "Jar",
+      "fromLang": 1,
+      "to": "Carafe",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 52
+    },
+    {
+      "from": "Bread",
+      "fromLang": 1,
+      "to": "Pain",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 53
+    },
+    {
+      "from": "Egg",
+      "fromLang": 1,
+      "to": "Oeuf",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 54
+    },
+    {
+      "from": "Something",
+      "fromLang": 1,
+      "to": "Quelque chose",
+      "toLang": 2,
+      "deckId": [
+        12
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 55
+    },
+    {
+      "from": "Something else",
+      "fromLang": 1,
+      "to": "Quelque chose d'autre",
+      "toLang": 2,
+      "deckId": [
+        12
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 56
+    },
+    {
+      "from": "Something",
+      "fromLang": 1,
+      "to": "Algo",
+      "toLang": 3,
+      "deckId": [
+        13
+      ],
+      "languageId": [
+        3
+      ],
+      "id": 57
+    },
+    {
+      "from": "Something else",
+      "fromLang": 1,
+      "to": "Otra cosa",
+      "toLang": 3,
+      "deckId": [
+        13
+      ],
+      "languageId": [
+        3
+      ],
+      "id": 58
+    },
+    {
+      "from": "Stool",
+      "fromLang": 1,
+      "to": "Tabouret",
+      "toLang": 2,
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 59
     }
   ]
 }

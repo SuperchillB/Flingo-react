@@ -39,13 +39,19 @@ const CardCreator = ({ deckId = null, onAddCard }) => {
           headers: { 'Content-Type': 'application/json' },
         },
       );
-      // Dispatch to reducer
-      dispatch({
-        type: 'ADD_CARD',
-        payload: {
-          card: response.data,
-        },
-      });
+      // If we're creating card from DeckDetails page or the containing deck was already pre-loaded
+      if (
+        window.location.pathname.includes('/decks/') ||
+        state.decks.find((d) => d.id === deckId).cards.length > 0
+      ) {
+        // Dispatch to reducer
+        dispatch({
+          type: 'ADD_CARD',
+          payload: {
+            card: response.data,
+          },
+        });
+      }
       // Tell parent new card is created to trigger re-navigation
       onAddCard();
     } catch (error) {

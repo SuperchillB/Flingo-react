@@ -3,33 +3,41 @@ import { Link } from '@reach/router';
 import { store } from '../../store';
 
 const Header = ({ onSelectLang }) => {
-  const { state } = useContext(store);
+  const { state, dispatch } = useContext(store);
   const [language, setLanguage] = useState(state.currentTargetLang.code);
 
   const selectLang = (e) => {
     // setLanguage(state.user.languages.find((l) => l.code === e.target.value));
     setLanguage(e.target.value);
-    onSelectLang(e);
+    // onSelectLang(e);
+    dispatch({
+      type: 'CHANGE_LANGUAGE',
+      payload: {
+        lang: e.target.value,
+      },
+    });
   };
   return (
-    <header>
+    <nav>
       <div>
         <h3>Flingo</h3>
-        <label htmlFor="language-dropdown">
-          <select
-            onChange={selectLang}
-            onBlur={() => null}
-            name="language-dropdown"
-            id="language-dropdown"
-            value={language}
-          >
-            {state.user.languages.map((lang) => (
-              <option key={lang.id} value={lang.code}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
-        </label>
+        {window.location.pathname === '/' && (
+          <label htmlFor="language-dropdown">
+            <select
+              onChange={selectLang}
+              onBlur={() => null}
+              name="language-dropdown"
+              id="language-dropdown"
+              value={language}
+            >
+              {state.user.languages.map((lang) => (
+                <option key={lang.id} value={lang.code}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
       </div>
       <ul>
         <li>
@@ -47,7 +55,7 @@ const Header = ({ onSelectLang }) => {
           <Link to="/profile">Profile</Link>
         </li>
       </ul>
-    </header>
+    </nav>
   );
 };
 

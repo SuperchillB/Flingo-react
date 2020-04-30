@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Router, Link } from '@reach/router';
 import { store } from '../store';
-import Header from '../components/common/Header';
+import NavBar from '../components/common/NavBar';
 import HomePage from './HomePage';
 import CreatePage from './CreatePage';
 import DeckDetails from './DeckDetails';
@@ -20,7 +20,7 @@ const App = () => {
   };
   return (
     <React.StrictMode>
-      <Header onSelectLang={selectLangHandler} />
+      <NavBar onSelectLang={selectLangHandler} />
       <Router>
         <HomePage path="/" />
         <DeckDetails path="decks/:deckId" />
