@@ -73,6 +73,7 @@ export default class API {
     return axios.put(`${this.url}/${API_PATH.DECKS}/${deckId}`, deck, config);
   };
   putCard = (card = {}, config = {}) => {
+    console.log(card);
     if (!card || isEmpty(card)) return false;
     const cardId = JSON.parse(card).id;
     return axios.put(`${this.url}/${API_PATH.CARDS}/${cardId}`, card, config);

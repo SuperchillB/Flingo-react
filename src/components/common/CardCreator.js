@@ -59,7 +59,7 @@ const CardCreator = ({ deckId = null, onAddCard }) => {
   return (
     <CardForm
       deckId={deckId}
-      onSubmit={(payload) => saveCard(payload)} // No need to catch e.target.value since CardCreator only does POST requests
+      onSubmit={saveCard} // No need to catch e.target.value since CardCreator only does POST requests
     />
   );
 };

@@ -20,7 +20,9 @@ const Header = ({ onSelectLang }) => {
   return (
     <nav>
       <div>
-        <h3>Flingo</h3>
+        <Link to="/">
+          <h3>Flingo</h3>
+        </Link>
         {window.location.pathname === '/' && (
           <label htmlFor="language-dropdown">
             <select

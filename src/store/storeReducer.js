@@ -26,14 +26,14 @@ const storeReducer = (state, action) => {
     case 'UPDATE_DECK':
       return methods.updateDeck(state, action.payload.deck);
     case 'UPDATE_CARD':
-      return;
+      return methods.updateCard(state, action.payload);
     case 'DELETE_USER':
       console.log('DELETE_USER');
       return;
     case 'DELETE_DECK':
       return;
     case 'DELETE_CARD':
-      return;
+      return methods.deleteCard(state, action.payload);
     case 'CHANGE_LANGUAGE':
       return methods.changeLanguage(state, action.payload.lang);
     case 'LOADING':

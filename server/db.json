@@ -191,22 +191,6 @@
       ]
     },
     {
-      "id": 5,
-      "from": "Tennis",
-      "fromLang": "en",
-      "to": "Tennis",
-      "toLang": "fr",
-      "notes": "",
-      "tags": [],
-      "deckId": [
-        4,
-        7
-      ],
-      "languageId": [
-        2
-      ]
-    },
-    {
       "id": 6,
       "from": "United Kingdom",
       "fromLang": "en",
@@ -336,38 +320,6 @@
       "tags": [],
       "deckId": [
         2
-      ],
-      "languageId": [
-        2
-      ]
-    },
-    {
-      "id": 15,
-      "from": "Climbing",
-      "fromLang": "en",
-      "to": "Escalade",
-      "toLang": "fr",
-      "notes": "",
-      "tags": [],
-      "deckId": [
-        4,
-        7
-      ],
-      "languageId": [
-        2
-      ]
-    },
-    {
-      "id": 16,
-      "from": "Dance",
-      "fromLang": "en",
-      "to": "Dance",
-      "toLang": "fr",
-      "notes": "",
-      "tags": [],
-      "deckId": [
-        4,
-        7
       ],
       "languageId": [
         2
@@ -644,11 +596,11 @@
       "id": 34
     },
     {
-      "from": "",
+      "from": "Spoon",
       "fromLang": 1,
-      "to": "",
+      "to": "Cuillère",
       "toLang": 2,
-      "notes": "",
+      "notes": "yet another spoon",
       "tags": [],
       "deckId": [
         11
@@ -657,51 +609,6 @@
         2
       ],
       "id": 35
-    },
-    {
-      "from": "",
-      "fromLang": 1,
-      "to": "",
-      "toLang": 2,
-      "notes": "",
-      "tags": [],
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 36
-    },
-    {
-      "from": "",
-      "fromLang": 1,
-      "to": "",
-      "toLang": 2,
-      "notes": "",
-      "tags": [],
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 37
-    },
-    {
-      "from": "",
-      "fromLang": 1,
-      "to": "",
-      "toLang": 2,
-      "notes": "",
-      "tags": [],
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 38
     },
     {
       "from": "Plate",
@@ -762,6 +669,21 @@
         2
       ],
       "id": 42
+    },
+    {
+      "from": "Chair",
+      "fromLang": 1,
+      "to": "Chaise",
+      "toLang": 2,
+      "notes": "yep",
+      "tags": [],
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 43
     }
   ]
 }

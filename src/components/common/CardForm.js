@@ -19,7 +19,7 @@ const CardForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     const cardData = { fromInput, toInput, notesInput, tagsList };
-    onSubmit({ value: e.target.value, cardData });
+    onSubmit({ actionType: e.target.value, cardData });
     setFromInput('');
     setToInput('');
     setNotesInput('');
@@ -66,7 +66,7 @@ const CardForm = ({
             onClick={(e) => handleSubmit(e)}
             type="submit"
             disabled={!deckId}
-            value="POST"
+            value="ADD_CARD"
           >
             Add Card
           </button>
@@ -85,7 +85,7 @@ const CardForm = ({
               onClick={(e) => handleSubmit(e)}
               type="submit"
               disabled={false}
-              value="PUT"
+              value="UPDATE_CARD"
             >
               Update Card
             </button>
@@ -93,7 +93,7 @@ const CardForm = ({
               onClick={(e) => handleSubmit(e)}
               type="submit"
               disabled={false}
-              value="DELETE"
+              value="DELETE_CARD"
             >
               Delete Card
             </button>
