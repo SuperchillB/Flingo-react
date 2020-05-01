@@ -123,26 +123,10 @@
     {
       "id": 11,
       "name": "Kitchen",
-      "description": "",
+      "description": "kitchen vocab",
       "languageId": [
         2
       ]
-    },
-    {
-      "name": "Test",
-      "description": "",
-      "languageId": [
-        2
-      ],
-      "id": 12
-    },
-    {
-      "name": "Test spanish",
-      "description": "",
-      "languageId": [
-        3
-      ],
-      "id": 13
     }
   ],
   "cards": [
@@ -152,6 +136,8 @@
       "fromLang": "en",
       "to": "Père",
       "toLang": "fr",
+      "notes": "Just some notes",
+      "tags": [],
       "deckId": [
         2
       ],
@@ -165,6 +151,8 @@
       "fromLang": "en",
       "to": "Chien",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         1
       ],
@@ -178,6 +166,8 @@
       "fromLang": "en",
       "to": "Chat",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         1
       ],
@@ -191,6 +181,8 @@
       "fromLang": "en",
       "to": "Janvier",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         3
       ],
@@ -204,6 +196,8 @@
       "fromLang": "en",
       "to": "Tennis",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         4,
         7
@@ -218,6 +212,8 @@
       "fromLang": "en",
       "to": "Royaume-Uni",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         6
       ],
@@ -231,6 +227,8 @@
       "fromLang": "en",
       "to": "Mars",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         3
       ],
@@ -244,6 +242,8 @@
       "fromLang": "en",
       "to": "Allemagne",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         6
       ],
@@ -257,6 +257,8 @@
       "fromLang": "en",
       "to": "Ville",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         6
       ],
@@ -270,6 +272,8 @@
       "fromLang": "en",
       "to": "Pluie",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         5
       ],
@@ -283,6 +287,8 @@
       "fromLang": "en",
       "to": "Soleil",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         5
       ],
@@ -296,6 +302,8 @@
       "fromLang": "en",
       "to": "Soeur",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         2
       ],
@@ -309,6 +317,8 @@
       "fromLang": "en",
       "to": "Cheval",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         1
       ],
@@ -322,6 +332,8 @@
       "fromLang": "en",
       "to": "Frère",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         2
       ],
@@ -335,6 +347,8 @@
       "fromLang": "en",
       "to": "Escalade",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         4,
         7
@@ -349,6 +363,8 @@
       "fromLang": "en",
       "to": "Dance",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         4,
         7
@@ -363,6 +379,8 @@
       "fromLang": "en",
       "to": "Grand-père",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         2
       ],
@@ -376,6 +394,8 @@
       "fromLang": "en",
       "to": "Hier",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         3
       ],
@@ -389,6 +409,8 @@
       "fromLang": "en",
       "to": "Oiseau",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         1
       ],
@@ -402,6 +424,8 @@
       "fromLang": "en",
       "to": "Photographie",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         4
       ],
@@ -415,6 +439,8 @@
       "fromLang": "en",
       "to": "Espagne",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         6
       ],
@@ -428,6 +454,8 @@
       "fromLang": "en",
       "to": "Mère",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         2
       ],
@@ -441,6 +469,8 @@
       "fromLang": "en",
       "to": "Demain",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         3
       ],
@@ -454,6 +484,8 @@
       "fromLang": "en",
       "to": "Famille",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         2
       ],
@@ -467,6 +499,8 @@
       "fromLang": "en",
       "to": "Pêche",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         4
       ],
@@ -480,6 +514,8 @@
       "fromLang": "en",
       "to": "Pays",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [
         6
       ],
@@ -493,6 +529,8 @@
       "fromLang": "en",
       "to": "Padre",
       "toLang": "ES",
+      "notes": "",
+      "tags": [],
       "deckId": [
         9
       ],
@@ -506,6 +544,8 @@
       "fromLang": "en",
       "to": "Perro",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [
         8
       ],
@@ -519,6 +559,8 @@
       "fromLang": "en",
       "to": "Gato",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [
         8
       ],
@@ -532,6 +574,8 @@
       "fromLang": "en",
       "to": "Enero",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [
         10
       ],
@@ -545,6 +589,8 @@
       "fromLang": "en",
       "to": "Marzo",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [
         10
       ],
@@ -558,6 +604,8 @@
       "fromLang": "en",
       "to": "Hermana",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [
         9
       ],
@@ -566,12 +614,14 @@
       ]
     },
     {
-      "from": "Greece",
+      "from": "Fork",
       "fromLang": 1,
-      "to": "Grèce",
+      "to": "Fourchette",
       "toLang": 2,
+      "notes": "Juste une fourchette",
+      "tags": [],
       "deckId": [
-        6
+        11
       ],
       "languageId": [
         2
@@ -579,10 +629,12 @@
       "id": 33
     },
     {
-      "from": "Bowl",
+      "from": "Knife",
       "fromLang": 1,
-      "to": "Bol",
+      "to": "Couteau",
       "toLang": 2,
+      "notes": "Juste un petit couteau",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -592,10 +644,12 @@
       "id": 34
     },
     {
-      "from": "Spoon",
+      "from": "",
       "fromLang": 1,
-      "to": "Cuillère",
+      "to": "",
       "toLang": 2,
+      "notes": "",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -605,10 +659,12 @@
       "id": 35
     },
     {
-      "from": "Fork",
+      "from": "",
       "fromLang": 1,
-      "to": "Fourchette",
+      "to": "",
       "toLang": 2,
+      "notes": "",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -618,10 +674,12 @@
       "id": 36
     },
     {
-      "from": "Knife",
+      "from": "",
       "fromLang": 1,
-      "to": "Couteau",
+      "to": "",
       "toLang": 2,
+      "notes": "",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -631,10 +689,12 @@
       "id": 37
     },
     {
-      "from": "Plate",
+      "from": "",
       "fromLang": 1,
-      "to": "Assiette",
+      "to": "",
       "toLang": 2,
+      "notes": "",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -644,10 +704,12 @@
       "id": 38
     },
     {
-      "from": "Chopsticks",
+      "from": "Plate",
       "fromLang": 1,
-      "to": "Baguettes",
+      "to": "Assiette",
       "toLang": 2,
+      "notes": "kwyegfkuywgef",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -657,10 +719,12 @@
       "id": 39
     },
     {
-      "from": "Pepper",
+      "from": "Salt",
       "fromLang": 1,
-      "to": "Poivre",
+      "to": "Sel",
       "toLang": 2,
+      "notes": "mmmmh",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -670,10 +734,12 @@
       "id": 40
     },
     {
-      "from": "Salt",
+      "from": "Pepper",
       "fromLang": 1,
-      "to": "Sel",
+      "to": "Poivre",
       "toLang": 2,
+      "notes": "sum peps",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -683,10 +749,12 @@
       "id": 41
     },
     {
-      "from": "Spices",
+      "from": "Glass",
       "fromLang": 1,
-      "to": "Épices",
+      "to": "Vert",
       "toLang": 2,
+      "notes": "",
+      "tags": [],
       "deckId": [
         11
       ],
@@ -694,227 +762,6 @@
         2
       ],
       "id": 42
-    },
-    {
-      "from": "Wine",
-      "fromLang": 1,
-      "to": "Vin",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 43
-    },
-    {
-      "from": "Table",
-      "fromLang": 1,
-      "to": "Table",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 44
-    },
-    {
-      "from": "Chair",
-      "fromLang": 1,
-      "to": "Chaise",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 45
-    },
-    {
-      "from": "Water",
-      "fromLang": 1,
-      "to": "Eau",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 46
-    },
-    {
-      "from": "Coffee",
-      "fromLang": 1,
-      "to": "Café",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 47
-    },
-    {
-      "from": "Mug",
-      "fromLang": 1,
-      "to": "Tasse",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 48
-    },
-    {
-      "from": "Juice",
-      "fromLang": 1,
-      "to": "Jus",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 49
-    },
-    {
-      "from": "Spatula",
-      "fromLang": 1,
-      "to": "Spatule",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 50
-    },
-    {
-      "from": "Bottle",
-      "fromLang": 1,
-      "to": "Bouteille",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 51
-    },
-    {
-      "from": "Jar",
-      "fromLang": 1,
-      "to": "Carafe",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 52
-    },
-    {
-      "from": "Bread",
-      "fromLang": 1,
-      "to": "Pain",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 53
-    },
-    {
-      "from": "Egg",
-      "fromLang": 1,
-      "to": "Oeuf",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 54
-    },
-    {
-      "from": "Something",
-      "fromLang": 1,
-      "to": "Quelque chose",
-      "toLang": 2,
-      "deckId": [
-        12
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 55
-    },
-    {
-      "from": "Something else",
-      "fromLang": 1,
-      "to": "Quelque chose d'autre",
-      "toLang": 2,
-      "deckId": [
-        12
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 56
-    },
-    {
-      "from": "Something",
-      "fromLang": 1,
-      "to": "Algo",
-      "toLang": 3,
-      "deckId": [
-        13
-      ],
-      "languageId": [
-        3
-      ],
-      "id": 57
-    },
-    {
-      "from": "Something else",
-      "fromLang": 1,
-      "to": "Otra cosa",
-      "toLang": 3,
-      "deckId": [
-        13
-      ],
-      "languageId": [
-        3
-      ],
-      "id": 58
-    },
-    {
-      "from": "Stool",
-      "fromLang": 1,
-      "to": "Tabouret",
-      "toLang": 2,
-      "deckId": [
-        11
-      ],
-      "languageId": [
-        2
-      ],
-      "id": 59
     }
   ]
 }

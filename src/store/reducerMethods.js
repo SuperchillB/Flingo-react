@@ -66,20 +66,13 @@ function loadDecks(state, decks = []) {
   return { ...state, loading: false };
 }
 
-function loadCards(
-  state,
-  { cards = [], deckId = null, fromCreatePage = false },
-) {
+function loadCards(state, { cards = [], deckId = null }) {
   console.log('loadCards');
   // First load only
-  // if (cards.length > 0 || fromCreatePage) {
   if (cards.length > 0) {
     // update decks one by one as cards are being loaded each time deck is clicked on
     const updatedDecks = state.decks.map((deck) => {
-      // if (deck.id === deckId) return { ...deck, cards: cards }; // TODO: remove cards here and instead add cards: [] in addNewDeck above?
-      if (deck.id === deckId)
-        // return { ...deck, cards: [...cards, ...deck.cards] }; // TODO: remove cards here and instead add cards: [] in addNewDeck above?
-        return { ...deck, cards: cards };
+      if (deck.id === deckId) return { ...deck, cards: cards };
       return deck;
     });
     return { ...state, decks: updatedDecks };

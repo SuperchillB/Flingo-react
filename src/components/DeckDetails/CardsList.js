@@ -10,7 +10,7 @@ const DecksList = ({ deck }) => {
   return (
     <ul>
       {deck.cards.map((card) => (
-        <CardListItem key={card.id} {...card} />
+        <CardListItem key={card.id} card={card} />
       ))}
     </ul>
   );

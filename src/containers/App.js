@@ -5,6 +5,7 @@ import NavBar from '../components/common/NavBar';
 import HomePage from './HomePage';
 import CreatePage from './CreatePage';
 import DeckDetails from './DeckDetails';
+import CardDetails from './CardDetails';
 import QuizPage from './QuizPage';
 import ProfilePage from './ProfilePage';
 
@@ -24,6 +25,7 @@ const App = () => {
       <Router>
         <HomePage path="/" />
         <DeckDetails path="decks/:deckId" />
+        <CardDetails path="cards/:cardId" />
         <CreatePage path="/create" />
         <QuizPage path="/quiz" />
         <ProfilePage path="/profile" />

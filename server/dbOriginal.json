@@ -57,6 +57,8 @@
       "fromLang": "en",
       "to": "Père",
       "toLang": "fr",
+      "notes": "Just some notes",
+      "tags": [],
       "deckId": [2],
       "languageId": [2]
     },
@@ -66,6 +68,8 @@
       "fromLang": "en",
       "to": "Chien",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [1],
       "languageId": [2]
     },
@@ -75,6 +79,8 @@
       "fromLang": "en",
       "to": "Chat",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [1],
       "languageId": [2]
     },
@@ -84,6 +90,8 @@
       "fromLang": "en",
       "to": "Janvier",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [3],
       "languageId": [2]
     },
@@ -93,6 +101,8 @@
       "fromLang": "en",
       "to": "Tennis",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [4, 7],
       "languageId": [2]
     },
@@ -102,6 +112,8 @@
       "fromLang": "en",
       "to": "Royaume-Uni",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [6],
       "languageId": [2]
     },
@@ -111,6 +123,8 @@
       "fromLang": "en",
       "to": "Mars",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [3],
       "languageId": [2]
     },
@@ -120,6 +134,8 @@
       "fromLang": "en",
       "to": "Allemagne",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [6],
       "languageId": [2]
     },
@@ -129,6 +145,8 @@
       "fromLang": "en",
       "to": "Ville",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [6],
       "languageId": [2]
     },
@@ -138,6 +156,8 @@
       "fromLang": "en",
       "to": "Pluie",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [5],
       "languageId": [2]
     },
@@ -147,6 +167,8 @@
       "fromLang": "en",
       "to": "Soleil",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [5],
       "languageId": [2]
     },
@@ -156,6 +178,8 @@
       "fromLang": "en",
       "to": "Soeur",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [2],
       "languageId": [2]
     },
@@ -165,6 +189,8 @@
       "fromLang": "en",
       "to": "Cheval",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [1],
       "languageId": [2]
     },
@@ -174,6 +200,8 @@
       "fromLang": "en",
       "to": "Frère",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [2],
       "languageId": [2]
     },
@@ -183,6 +211,8 @@
       "fromLang": "en",
       "to": "Escalade",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [4, 7],
       "languageId": [2]
     },
@@ -192,6 +222,8 @@
       "fromLang": "en",
       "to": "Dance",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [4, 7],
       "languageId": [2]
     },
@@ -201,6 +233,8 @@
       "fromLang": "en",
       "to": "Grand-père",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [2],
       "languageId": [2]
     },
@@ -210,6 +244,8 @@
       "fromLang": "en",
       "to": "Hier",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [3],
       "languageId": [2]
     },
@@ -219,6 +255,8 @@
       "fromLang": "en",
       "to": "Oiseau",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [1],
       "languageId": [2]
     },
@@ -228,6 +266,8 @@
       "fromLang": "en",
       "to": "Photographie",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [4],
       "languageId": [2]
     },
@@ -237,6 +277,8 @@
       "fromLang": "en",
       "to": "Espagne",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [6],
       "languageId": [2]
     },
@@ -246,6 +288,8 @@
       "fromLang": "en",
       "to": "Mère",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [2],
       "languageId": [2]
     },
@@ -255,6 +299,8 @@
       "fromLang": "en",
       "to": "Demain",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [3],
       "languageId": [2]
     },
@@ -264,6 +310,8 @@
       "fromLang": "en",
       "to": "Famille",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [2],
       "languageId": [2]
     },
@@ -273,6 +321,8 @@
       "fromLang": "en",
       "to": "Pêche",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [4],
       "languageId": [2]
     },
@@ -282,6 +332,8 @@
       "fromLang": "en",
       "to": "Pays",
       "toLang": "fr",
+      "notes": "",
+      "tags": [],
       "deckId": [6],
       "languageId": [2]
     },
@@ -292,6 +344,8 @@
       "fromLang": "en",
       "to": "Padre",
       "toLang": "ES",
+      "notes": "",
+      "tags": [],
       "deckId": [9],
       "languageId": [3]
     },
@@ -301,6 +355,8 @@
       "fromLang": "en",
       "to": "Perro",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [8],
       "languageId": [3]
     },
@@ -310,6 +366,8 @@
       "fromLang": "en",
       "to": "Gato",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [8],
       "languageId": [3]
     },
@@ -319,6 +377,8 @@
       "fromLang": "en",
       "to": "Enero",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [10],
       "languageId": [3]
     },
@@ -328,6 +388,8 @@
       "fromLang": "en",
       "to": "Marzo",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [10],
       "languageId": [3]
     },
@@ -337,6 +399,8 @@
       "fromLang": "en",
       "to": "Hermana",
       "toLang": "es",
+      "notes": "",
+      "tags": [],
       "deckId": [9],
       "languageId": [3]
     }

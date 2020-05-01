@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
+import CardForm from './CardForm';
 import { store } from '../../store';
 import API from '../../utils/apiUtils';
 import { API_BASE_URL } from '../../constants/apiConstants';
@@ -6,20 +7,8 @@ import axios from 'axios';
 
 const CardCreator = ({ deckId = null, onAddCard }) => {
   const { state, dispatch } = useContext(store);
-  const [fromText, setFromText] = useState('');
-  const [toText, setToText] = useState('');
-  const [notes, setNotes] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    saveCard();
-    // Empty input fields
-    setFromText('');
-    setToText('');
-    setNotes('');
-  };
-
-  const saveCard = async () => {
+  const saveCard = async ({ cardData }) => {
     // Create API instance
     const api = new API({ url: API_BASE_URL.USERDATA[process.env.NODE_ENV] });
     // Create new token for the request
@@ -27,10 +16,12 @@ const CardCreator = ({ deckId = null, onAddCard }) => {
     try {
       const response = await api.postCard(
         JSON.stringify({
-          from: fromText,
+          from: cardData.fromInput,
           fromLang: state.user.defaultLang.id,
-          to: toText,
+          to: cardData.toInput,
           toLang: state.user.targetLang.id,
+          notes: cardData.notesInput,
+          tags: cardData.tagsList,
           deckId: [deckId],
           languageId: [state.user.targetLang.id],
         }),
@@ -66,51 +57,10 @@ const CardCreator = ({ deckId = null, onAddCard }) => {
   };
 
   return (
-    <div>
-      <form>
-        <div>
-          <div>
-            <label htmlFor="translateFrom">
-              <input
-                id="translateFrom"
-                type="text"
-                value={fromText}
-                placeholder="From"
-                onChange={(e) => setFromText(e.target.value)}
-              />
-            </label>
-            <label htmlFor="translateTo">
-              <input
-                id="translateTo"
-                type="text"
-                value={toText}
-                placeholder="To"
-                onChange={(e) => setToText(e.target.value)}
-              />
-            </label>
-          </div>
-          <div></div>
-        </div>
-        <div>
-          <textarea
-            name="cardNotes"
-            id="cardNotes"
-            cols="30"
-            rows="10"
-            value={notes}
-            placeholder="Notes"
-            onChange={(e) => setNotes(e.target.value)}
-          />
-          <button
-            onClick={(e) => handleSubmit(e)}
-            type="submit"
-            disabled={!deckId}
-          >
-            Add Card
-          </button>
-        </div>
-      </form>
-    </div>
+    <CardForm
+      deckId={deckId}
+      onSubmit={(payload) => saveCard(payload)} // No need to catch e.target.value since CardCreator only does POST requests
+    />
   );
 };
 

@@ -12,6 +12,7 @@ const DeckInfo = ({
   onHideDropdown = () => {},
   onSaveDeck = () => {},
   referral = 'home',
+  deckDetailsPage = false,
 }) => {
   const { state, dispatch } = useContext(store);
   const [deckData, setDeckData] = useState({
@@ -43,6 +44,8 @@ const DeckInfo = ({
       }
     }
   };
+
+  const handleDeleteDeck = () => {};
 
   const saveDeck = async (method, action) => {
     // Create API instance
@@ -151,6 +154,9 @@ const DeckInfo = ({
           </button>
         )}
         <button onClick={handleSaveDeck}>Save</button>
+        {deckDetailsPage && (
+          <button onClick={handleDeleteDeck}>Delete Deck</button>
+        )}
       </div>
     </div>
   );

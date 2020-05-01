@@ -82,7 +82,9 @@ const HomePage = () => {
       ) : (
         <div>
           <h2>You currently have no decks</h2>
-          <Link to="/create/new-deck">New deck</Link>
+          <Link to="/create" state={{ referral: 'home' }}>
+            New deck
+          </Link>
         </div>
       )}
     </div>

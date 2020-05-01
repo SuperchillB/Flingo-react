@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from '@reach/router';
 
-const CardListItem = ({ id, from, to, fromLang, toLang }) => {
+const CardListItem = ({ card }) => {
+  const { id, from, to, fromLang, toLang } = card;
   return (
-    <li>
-      <div data-id={id}>
+    <li data-id={id}>
+      {/* <Link to={`/decks/${deckId[0]}/${id}`}> */}
+      <Link to={`/cards/${id}`} state={{ card }}>
         <span>{`${from} (${fromLang})`}</span>|
         <span>{`${to} (${toLang})`}</span>
-      </div>
+      </Link>
     </li>
   );
 };
