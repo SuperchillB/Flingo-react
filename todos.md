@@ -1,9 +1,8 @@
 Short term:
 
-- Add delete deck logic (from homepage (on hover) AND deck view page)
-- Add delete card logic from deck view page (on hover)
+- Add delete deck logic from homepage (on hover)
+- Add delete card logic from deck view page (on hover + multiple)
 - Fix capital letter logo for decks
-- Disable 'save' button in DeckInfo (Create Page) once user has created new deck
 - Make 'save' button in deck view dynamically active (only show when something has changed => new deck info)
 - Make 'update' button in card view dynamically active (only show when something has changed => new card info)
 - Create tags logic (CardDetails)

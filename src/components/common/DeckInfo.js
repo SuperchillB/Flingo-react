@@ -23,6 +23,7 @@ const DeckInfo = ({
     description,
     languageId: state.user.targetLang.id,
   });
+  const [deckCreated, setDeckCreated] = useState(false);
   const handleHideDropdown = (e) => onHideDropdown(e);
 
   console.log('DeckInfo', {
@@ -90,6 +91,8 @@ const DeckInfo = ({
         };
         // Payload in dispatch functino
         payload = { deck: data };
+        // Disable 'save' button
+        setDeckCreated(true);
       }
       // PUT
       if (actionType === 'UPDATE_DECK') {
@@ -178,6 +181,7 @@ const DeckInfo = ({
           onClick={(e) => handleSubmit(e)}
           type="submit"
           value={id ? 'UPDATE_DECK' : 'ADD_DECK'}
+          disabled={deckCreated}
         >
           Save
         </button>
