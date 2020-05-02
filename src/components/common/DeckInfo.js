@@ -11,6 +11,7 @@ const DeckInfo = ({
   description = '',
   onHideDropdown = () => {},
   onSaveDeck = () => {},
+  onDeleteDeck = () => {},
   referral = 'home',
   deckDetailsPage = false,
 }) => {
@@ -31,23 +32,34 @@ const DeckInfo = ({
     onHideDropdown,
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const actionType = e.target.value;
+    // TODO: Add some sanitisation/validation rules
+    if (actionType === 'DELETE_DECK') {
+      makeDeckRequest(actionType);
+    } else {
+      if (deckData.name !== '') makeDeckRequest(actionType);
+    }
+  };
+
   const handleSaveDeck = () => {
     if (deckData.name !== '') {
       if (id) {
         // ! if existing id => = existing deck => putDeck or patchDeck
         console.log('id exists');
-        saveDeck('PUT', 'UPDATE_DECK');
+        makeDeckRequest('PUT', 'UPDATE_DECK');
       } else {
         // ! if no existing id => = new deck => postDeck
         console.log('id doesnt exists');
-        saveDeck('POST', 'ADD_DECK');
+        makeDeckRequest('POST', 'ADD_DECK');
       }
     }
   };
 
-  const handleDeleteDeck = () => {};
+  const handleDeleteDeck = () => makeDeckRequest('DELETE', 'DELETE_DECK');
 
-  const saveDeck = async (method, action) => {
+  const makeDeckRequest = async (actionType) => {
     // Create API instance
     const api = new API({ url: API_BASE_URL.USERDATA[process.env.NODE_ENV] });
     // Create new token for the request
@@ -55,28 +67,32 @@ const DeckInfo = ({
     try {
       let response;
       let data;
-      // Prepare payload for API request method
-      const payload = {
+      let payload;
+      // Prepare config for API request method
+      const config = {
         cancelToken: source.token,
         headers: { 'Content-Type': 'application/json' },
       };
-      // POST or PUT
-      if (method === 'POST') {
+      // POST
+      if (actionType === 'ADD_DECK') {
         response = await api.postDeck(
           JSON.stringify({
             name: deckData.name,
             description: deckData.description,
             languageId: [state.user.targetLang.id],
           }),
-          payload,
+          config,
         );
         // Add cards property for global state
         data = {
           ...response.data,
           cards: [],
         };
+        // Payload in dispatch functino
+        payload = { deck: data };
       }
-      if (method === 'PUT') {
+      // PUT
+      if (actionType === 'UPDATE_DECK') {
         response = await api.putDeck(
           JSON.stringify({
             id: deckData.id,
@@ -84,26 +100,35 @@ const DeckInfo = ({
             description: deckData.description,
             languageId: [state.user.targetLang.id],
           }),
-          payload,
+          config,
         );
         // Don't add empty cards property here or else existing cards will be gone
         data = { ...response.data };
+        // Payload in dispatch functino
+        payload = { deck: data };
       }
-      // // Add cards property for global state
-      // const data = {
-      //   ...response.data,
-      //   cards: [],
-      // };
+      // DELETE
+      if (actionType === 'DELETE_DECK') {
+        response = await api.deleteDeck(id, {
+          cancelToken: source.token,
+        });
+        payload = { deletedDeckId: id };
+      }
       // Dispatch to reducer
+      // dispatch({
+      //   type: action,
+      //   payload: {
+      //     deck: data,
+      //   },
+      // });
       dispatch({
-        type: action,
-        payload: {
-          deck: data,
-        },
+        type: actionType,
+        payload,
       });
       // Tell parent new deck is created so CardCreator can enable card creation
       // ? ONLY FOR POST? OR FOR PUT TOO?
-      if (method === 'POST') onSaveDeck(data.id);
+      if (actionType === 'ADD_DECK') onSaveDeck(data.id);
+      if (actionType === 'DELETE_DECK') onDeleteDeck();
     } catch (error) {
       dispatch({
         type: 'ERROR',
@@ -114,13 +139,9 @@ const DeckInfo = ({
       }
     }
   };
-  // // when unmounting component, cancel axios token
-  // return () => {
-  //   source.cancel();
-  // };
 
   return (
-    <div>
+    <form>
       <div>{deckData.letter}</div>
       <div>
         <label htmlFor="deckTitle">
@@ -153,12 +174,24 @@ const DeckInfo = ({
             Change deck (back btn)
           </button>
         )}
-        <button onClick={handleSaveDeck}>Save</button>
+        <button
+          onClick={(e) => handleSubmit(e)}
+          type="submit"
+          value={id ? 'UPDATE_DECK' : 'ADD_DECK'}
+        >
+          Save
+        </button>
         {deckDetailsPage && (
-          <button onClick={handleDeleteDeck}>Delete Deck</button>
+          <button
+            onClick={(e) => handleSubmit(e)}
+            type="submit"
+            value="DELETE_DECK"
+          >
+            Delete Deck
+          </button>
         )}
       </div>
-    </div>
+    </form>
   );
 };
 

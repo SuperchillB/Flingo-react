@@ -581,19 +581,19 @@
       "id": 33
     },
     {
+      "id": 34,
       "from": "Knife",
       "fromLang": 1,
       "to": "Couteau",
       "toLang": 2,
-      "notes": "Juste un petit couteau",
+      "notes": "some knives",
       "tags": [],
       "deckId": [
         11
       ],
       "languageId": [
         2
-      ],
-      "id": 34
+      ]
     },
     {
       "from": "Spoon",

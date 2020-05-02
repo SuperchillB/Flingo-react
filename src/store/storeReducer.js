@@ -31,7 +31,7 @@ const storeReducer = (state, action) => {
       console.log('DELETE_USER');
       return;
     case 'DELETE_DECK':
-      return;
+      return methods.deleteDeck(state, action.payload);
     case 'DELETE_CARD':
       return methods.deleteCard(state, action.payload);
     case 'CHANGE_LANGUAGE':

@@ -1,5 +1,3 @@
-import CardDetails from '../containers/CardDetails';
-
 function loadDecks(state, decks = []) {
   // First load only
   if (decks.length > 0) {
@@ -44,6 +42,12 @@ function updateDeck(state, updatedDeck) {
   return { ...state };
 }
 
+function deleteDeck(state, { deletedDeckId = null }) {
+  const newDeckList = state.decks.filter((deck) => deck.id !== deletedDeckId);
+  // state.decks = newDeckList;
+  return { ...state, decks: newDeckList };
+}
+
 function loadCards(state, { cards = [], deckId = null }) {
   console.log('loadCards');
   // First load only
@@ -76,6 +80,7 @@ function updateCard(state, { updatedCard = {}, parentDeck = {} }) {
   return { ...state };
 }
 
+// TODO: Add logic to delete multiple cards at the same time (last ex in https://flaviocopes.com/how-to-remove-item-from-array/)
 function deleteCard(state, { deletedCardId = null, parentDeck = {} }) {
   const newCardList = parentDeck.cards.filter(
     (card) => card.id !== deletedCardId,
@@ -108,6 +113,7 @@ export default {
   addNewCard,
   changeLanguage,
   deleteCard,
+  deleteDeck,
   loadCards,
   loadDecks,
   updateCard,
