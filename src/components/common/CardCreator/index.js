@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import CardForm from './CardForm';
-import { store } from '../../store';
-import API from '../../utils/apiUtils';
-import { API_BASE_URL } from '../../constants/apiConstants';
+import CardForm from '../CardForm';
+import { store } from '../../../store';
+import API from '../../../utils/apiUtils';
+import { API_BASE_URL } from '../../../constants/apiConstants';
 import axios from 'axios';
 
 const CardCreator = ({ deckId = null, onAddCard }) => {

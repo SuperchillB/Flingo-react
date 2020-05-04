@@ -1,0 +1,18 @@
+// Font-size mixin
+// Applies correct font-size based on device (mobile, tablet or desktop)
+@mixin font-size($type: t5) {
+  $sizeRow: map-get($font-sizes, $type);
+  $mobile: map-get($sizeRow, 'mobile');
+  $tablet: map-get($sizeRow, 'tablet');
+  $desktop: map-get($sizeRow, 'desktop');
+
+  font-size: $mobile + rem;
+
+  @include mq($from: small) {
+    font-size: $tablet + rem;
+  }
+
+  @include mq($from: large) {
+    font-size: $desktop + rem;
+  }
+}

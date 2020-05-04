@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from '@reach/router';
-import DeckListItem from './DeckListItem';
-import { store } from '../../store';
+import DeckListItem from '../DecksListItem';
+import { store } from '../../../store';
+import styles from './styles.module.scss';
 
 const DecksList = () => {
   const { state } = useContext(store);
 
   return (
-    <ul>
+    <ul className={styles.deckList}>
       <li>
         <Link to="/create" state={{ referral: 'home' }}>
           New deck

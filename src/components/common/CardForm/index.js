@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const CardForm = ({
   from = '',
@@ -15,6 +15,11 @@ const CardForm = ({
   const [toInput, setToInput] = useState(to);
   const [notesInput, setNotesInput] = useState(notes);
   const [tagsList, setTagsList] = useState(tags);
+  const [disabledSave, setDisabledSave] = useState(true);
+  const fromRef = useRef(fromInput);
+  const toRef = useRef(toInput);
+  const notesRef = useRef(notesInput);
+  const tagsRef = useRef(tagsList);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +29,19 @@ const CardForm = ({
     setToInput('');
     setNotesInput('');
     setTagsList([]);
+  };
+
+  // const handleDirty = (value, stateValue, stateValueUpdater) => {
+  const handleDirty = ({ value, id }, refValue, stateValueUpdater) => {
+    stateValueUpdater(value);
+    // TODO: make different condition for tags?
+    if (fromInput.length === 0 || toInput.length === 0) {
+      setDisabledSave(true);
+    } else if (value === refValue.current) {
+      setDisabledSave(true);
+    } else {
+      setDisabledSave(false);
+    }
   };
 
   return (
@@ -36,7 +54,8 @@ const CardForm = ({
               type="text"
               value={fromInput}
               placeholder="From"
-              onChange={(e) => setFromInput(e.target.value)}
+              onChange={(e) => handleDirty(e.target, fromRef, setFromInput)}
+              // onChange={(e) => setFromInput(e.target.value)}
             />
           </label>
           <label htmlFor="translateTo">
@@ -45,7 +64,8 @@ const CardForm = ({
               type="text"
               value={toInput}
               placeholder="To"
-              onChange={(e) => setToInput(e.target.value)}
+              onChange={(e) => handleDirty(e.target, toRef, setToInput)}
+              // onChange={(e) => setToInput(e.target.value)}
             />
           </label>
         </div>
@@ -59,13 +79,14 @@ const CardForm = ({
           rows="10"
           value={notesInput}
           placeholder="Notes"
-          onChange={(e) => setNotesInput(e.target.value)}
+          onChange={(e) => handleDirty(e.target, notesRef, setNotesInput)}
+          // onChange={(e) => setNotesInput(e.target.value)}
         />
         {!cardDetailsMode && (
           <button
             onClick={(e) => handleSubmit(e)}
             type="submit"
-            disabled={!deckId}
+            disabled={!deckId || disabledSave}
             value="ADD_CARD"
           >
             Add Card
@@ -84,7 +105,7 @@ const CardForm = ({
             <button
               onClick={(e) => handleSubmit(e)}
               type="submit"
-              disabled={false}
+              disabled={disabledSave}
               value="UPDATE_CARD"
             >
               Update Card

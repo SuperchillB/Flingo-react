@@ -1,0 +1,48 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+
+  & > div:first-child,
+  ul {
+    display: flex;
+  }
+
+  & > div:first-child {
+    a {
+      margin-right: 3rem;
+
+      span {
+        @include font-size('h2');
+        font-weight: $weight-bold;
+        color: $flingo-darkBlue;
+      }
+    }
+  }
+
+  ul {
+    li:not(:last-of-type) {
+      margin-right: 2rem;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      color: $mid-grey;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1rem;
+      }
+
+      &.active {
+        color: $dark-grey;
+
+        path {
+          stroke: $dark-grey;
+        }
+      }
+    }
+  }
+}

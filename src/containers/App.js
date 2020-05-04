@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Router, Link } from '@reach/router';
 import { store } from '../store';
-import NavBar from '../components/common/NavBar';
+import NavBar from '../components/common/Navbar';
 import HomePage from './HomePage';
 import CreatePage from './CreatePage';
 import DeckDetails from './DeckDetails';

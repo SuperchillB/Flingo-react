@@ -75,10 +75,7 @@ const HomePage = () => {
   return (
     <div>
       {isAuth ? (
-        <div>
-          <h1>Deck list</h1>
-          {state.loading ? <p>Loading ...</p> : <DecksList />}
-        </div>
+        <div>{state.loading ? <p>Loading ...</p> : <DecksList />}</div>
       ) : (
         <div>
           <h2>You currently have no decks</h2>

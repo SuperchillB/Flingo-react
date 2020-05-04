@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DeckInfo from '../../components/common/DeckInfo';
+import DeckInfo from '../common/DeckInfo';
 
 const DeckSelection = ({ decks, onSaveDeck }) => {
   const [hideDropdown, setHideDropdown] = useState(false);

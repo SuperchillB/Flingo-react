@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { store } from '../../store';
-import API from '../../utils/apiUtils';
-import { API_BASE_URL } from '../../constants/apiConstants';
+import { store } from '../../../store';
+import API from '../../../utils/apiUtils';
+import { API_BASE_URL } from '../../../constants/apiConstants';
 import axios from 'axios';
 
 const DeckInfo = ({

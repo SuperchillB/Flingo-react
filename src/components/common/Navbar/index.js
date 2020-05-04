@@ -1,8 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Link } from '@reach/router';
-import { store } from '../../store';
+import { store } from '../../../store';
+import DecksIcon from '../../../assets/flingo-icons-decks.svg';
+import CreateIcon from '../../../assets/flingo-icons-plus.svg';
+import QuizIcon from '../../../assets/flingo-icons-quiz.svg';
+import ProfileIcon from '../../../assets/flingo-icons-profile.svg';
+import styles from './styles.module.scss';
 
-const Header = ({ onSelectLang }) => {
+const NavBar = ({ onSelectLang }) => {
   const { state, dispatch } = useContext(store);
   const [language, setLanguage] = useState(state.currentTargetLang.code);
 
@@ -18,10 +23,10 @@ const Header = ({ onSelectLang }) => {
     });
   };
   return (
-    <nav>
+    <nav className={styles.navbar}>
       <div>
         <Link to="/">
-          <h3>Flingo</h3>
+          <span>flingo</span>
         </Link>
         {window.location.pathname === '/' && (
           <label htmlFor="language-dropdown">
@@ -43,22 +48,38 @@ const Header = ({ onSelectLang }) => {
       </div>
       <ul>
         <li>
-          <Link to="/">Decks</Link>
+          <NavLink to="/">
+            <DecksIcon /> Decks
+          </NavLink>
         </li>
         <li>
-          <Link to="/create" state={{ referral: 'navbar' }}>
+          <NavLink to="/create" state={{ referral: 'navbar' }}>
+            <CreateIcon />
             Create
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/quiz">Quiz</Link>
+          <NavLink to="/quiz">
+            <QuizIcon /> Quiz
+          </NavLink>
         </li>
         <li>
-          <Link to="/profile">Profile</Link>
+          <NavLink to="/profile">
+            <ProfileIcon /> Profile
+          </NavLink>
         </li>
       </ul>
     </nav>
   );
 };
 
-export default Header;
+const NavLink = (props) => (
+  <Link
+    {...props}
+    getProps={({ isCurrent }) => {
+      return isCurrent ? { className: styles.active } : {};
+    }}
+  />
+);
+
+export default NavBar;

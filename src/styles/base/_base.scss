@@ -1,0 +1,56 @@
+// Set font-size to 62.5% so that 1rem = 10px
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include font-size;
+  background-color: $light-grey;
+  color: $dark-grey;
+  font-family: $font-family-base;
+  font-weight: $weight-light;
+  line-height: 1.5;
+  margin: 0;
+  position: relative;
+}
+
+blockquote,
+dl,
+dd,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+pre {
+  margin: 0;
+}
+
+// button {
+//   background: transparent;
+//   border: 0;
+//   padding: 0;
+// }
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $dark-grey;
+  text-decoration: none;
+}
