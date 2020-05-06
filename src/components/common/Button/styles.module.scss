@@ -1,0 +1,18 @@
+.customButton {
+  -webkit-appearance: none;
+  background: $flingo-darkBlue;
+  color: $white;
+  border: none;
+  height: 4rem;
+  border-radius: 10rem;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  align-self: flex-start;
+  padding: 1rem 2rem;
+
+  &[disabled] {
+    background-color: $mid-grey;
+    cursor: default;
+  }
+}

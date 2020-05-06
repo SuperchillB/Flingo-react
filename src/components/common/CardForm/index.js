@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import InputField from '../InputField';
+import Button from '../Button';
 import styles from './styles.module.scss';
 
 const CardForm = ({
@@ -54,7 +56,25 @@ const CardForm = ({
       <form className={`${styles.cardForm}`}>
         <div className={styles.cardForm__fromTo}>
           <div className={styles.cardForm__fromTo__inputs}>
-            <label htmlFor="translateFrom">
+            <InputField
+              classNames="input--pill"
+              id="translateFrom"
+              type="text"
+              value={fromInput}
+              placeholder="From"
+              onChangeHandler={(e) =>
+                handleDirty(e.target, fromRef, setFromInput)
+              }
+            />
+            <InputField
+              classNames="input--pill"
+              id="translateTo"
+              type="text"
+              value={toInput}
+              placeholder="To"
+              onChangeHandler={(e) => handleDirty(e.target, toRef, setToInput)}
+            />
+            {/* <label htmlFor="translateFrom">
               <input
                 id="translateFrom"
                 type="text"
@@ -75,12 +95,22 @@ const CardForm = ({
                 // onChange={(e) => setToInput(e.target.value)}
               />
               <span></span>
-            </label>
+            </label> */}
           </div>
           <div></div>
         </div>
         <div className={styles.cardForm__notesAddCard}>
-          <label htmlFor="cardNotes">
+          <InputField
+            classNames="input--pill"
+            id="cardNotes"
+            type="textarea"
+            value={notesInput}
+            placeholder="Notes"
+            onChangeHandler={(e) =>
+              handleDirty(e.target, notesRef, setNotesInput)
+            }
+          />
+          {/* <label htmlFor="cardNotes">
             <textarea
               name="cardNotes"
               id="cardNotes"
@@ -90,44 +120,74 @@ const CardForm = ({
               // onChange={(e) => setNotesInput(e.target.value)}
             />
             <span></span>
-          </label>
+          </label> */}
           {!cardDetailsMode && (
-            <button
-              onClick={(e) => handleSubmit(e)}
+            <Button
+              onClickHandler={(e) => handleSubmit(e)}
               type="submit"
-              disabled={!deckId || disabledSave}
+              isDisabled={!deckId || disabledSave}
               value="ADD_CARD"
             >
               Add Card
-            </button>
+            </Button>
+            // <button
+            //   onClick={(e) => handleSubmit(e)}
+            //   type="submit"
+            //   disabled={!deckId || disabledSave}
+            //   value="ADD_CARD"
+            // >
+            //   Add Card
+            // </button>
           )}
         </div>
         {cardDetailsMode && (
           <>
             <div>
-              <label htmlFor="tagsInput">
+              <InputField
+                classNames="input--pill"
+                id="tagsInput"
+                type="text"
+                placeholder="Tags"
+              />
+              {/* <label htmlFor="tagsInput">
                 <input id="tagsInput" type="text" placeholder="Tags" />
                 <span></span>
-              </label>
+              </label> */}
               <div></div>
             </div>
             <div>
-              <button
+              <Button
+                onClickHandler={(e) => handleSubmit(e)}
+                type="submit"
+                isDisabled={disabledSave}
+                value="UPDATE_CARD"
+              >
+                Update Card
+              </Button>
+              {/* <button
                 onClick={(e) => handleSubmit(e)}
                 type="submit"
                 disabled={disabledSave}
                 value="UPDATE_CARD"
               >
                 Update Card
-              </button>
-              <button
+              </button> */}
+              <Button
+                onClickHandler={(e) => handleSubmit(e)}
+                type="submit"
+                isDisabled={false}
+                value="DELETE_CARD"
+              >
+                Delete Card
+              </Button>
+              {/* <button
                 onClick={(e) => handleSubmit(e)}
                 type="submit"
                 disabled={false}
                 value="DELETE_CARD"
               >
                 Delete Card
-              </button>
+              </button> */}
             </div>
           </>
         )}

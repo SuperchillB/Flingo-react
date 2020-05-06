@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { store } from '../../../store';
+import InputField from '../InputField';
+import Button from '../Button';
 import API from '../../../utils/apiUtils';
 import { API_BASE_URL } from '../../../constants/apiConstants';
 import axios from 'axios';
@@ -150,7 +152,27 @@ const DeckInfo = ({
         <div className={styles.deckInfo__logo}>{deckData.letter}</div>
         <div className={styles.deckInfo__inputs}>
           <div>
-            <label className="no-bg" htmlFor="deckTitle">
+            <InputField
+              classNames="input--line"
+              id="deckTitle"
+              type="text"
+              value={deckData.name}
+              placeholder="Deck title"
+              onChangeHandler={(e) =>
+                setDeckData({ ...deckData, name: e.target.value })
+              }
+            />
+            <InputField
+              classNames="input--line"
+              id="deckDescription"
+              type="textarea"
+              value={deckData.description}
+              placeholder="Description"
+              onChangeHandler={(e) =>
+                setDeckData({ ...deckData, description: e.target.value })
+              }
+            />
+            {/* <label className="no-bg" htmlFor="deckTitle">
               <input
                 id="deckTitle"
                 name="title"
@@ -174,30 +196,48 @@ const DeckInfo = ({
                 }
               />
               <span></span>
-            </label>
+            </label> */}
           </div>
           <div>
             {referral !== 'home' && (
-              <button onClick={(e) => handleHideDropdown(e)}>
+              <Button onClickHandler={(e) => handleHideDropdown(e)}>
                 Change deck
-              </button>
+              </Button>
+              // <button onClick={(e) => handleHideDropdown(e)}>
+              //   Change deck
+              // </button>
             )}
-            <button
+            <Button
+              onClickHandler={(e) => handleSubmit(e)}
+              type="submit"
+              isDisabled={deckCreated}
+              value={id ? 'UPDATE_DECK' : 'ADD_DECK'}
+            >
+              Save
+            </Button>
+            {/* <button
               onClick={(e) => handleSubmit(e)}
               type="submit"
               value={id ? 'UPDATE_DECK' : 'ADD_DECK'}
               disabled={deckCreated}
             >
               Save
-            </button>
+            </button> */}
             {deckDetailsPage && (
-              <button
-                onClick={(e) => handleSubmit(e)}
+              <Button
+                onClickHandler={(e) => handleSubmit(e)}
                 type="submit"
                 value="DELETE_DECK"
               >
                 Delete Deck
-              </button>
+              </Button>
+              // <button
+              //   onClick={(e) => handleSubmit(e)}
+              //   type="submit"
+              //   value="DELETE_DECK"
+              // >
+              //   Delete Deck
+              // </button>
             )}
           </div>
         </div>

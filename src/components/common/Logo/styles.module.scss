@@ -18,7 +18,9 @@
   }
 
   a {
-    margin-right: 3rem;
+    @include mq($from: 'small') {
+      margin-right: 3rem;
+    }
 
     span {
       @include font-size('h2');
