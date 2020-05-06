@@ -9,11 +9,7 @@ const DecksList = () => {
 
   return (
     <ul className={styles.deckList}>
-      <li>
-        <Link to="/create" state={{ referral: 'home' }}>
-          New deck
-        </Link>
-      </li>
+      <DeckListItem addDeck={true} />
       {state.decks.map((deck) => (
         <DeckListItem key={deck.id} {...deck} />
       ))}

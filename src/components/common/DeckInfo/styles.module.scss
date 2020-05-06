@@ -1,0 +1,40 @@
+.deckInfoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deckInfo {
+  display: flex;
+  background-color: $white;
+  border-radius: 10rem;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  max-width: 40rem;
+
+  &__logo {
+    @include font-size('t14');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-grey;
+    color: $mid-grey;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 25rem;
+    width: 80%;
+
+    & div:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

@@ -4,9 +4,9 @@
 
 $breakpoints: (
   'xsmall': 1px,
-  'small': 480px,
-  'medium': 740px,
-  'large': 980px,
+  'small': 640px,
+  'medium': 768px,
+  'large': 1024px,
   'xlarge': 1300px,
 ) !default;
 
@@ -93,6 +93,21 @@ $text-sizes: (
     desktop: 4,
     tablet: 3.6,
     mobile: 3.6,
+  ),
+  't12': (
+    desktop: 4.4,
+    tablet: 4,
+    mobile: 4,
+  ),
+  't13': (
+    desktop: 4.8,
+    tablet: 4.4,
+    mobile: 4.4,
+  ),
+  't14': (
+    desktop: 5.2,
+    tablet: 4.8,
+    mobile: 4.8,
   ),
 );
 

@@ -5,6 +5,7 @@ import { store } from '../../store';
 import API from '../../utils/apiUtils';
 import { API_BASE_URL } from '../../constants/apiConstants';
 import axios from 'axios';
+import styles from './styles.module.scss';
 
 const CardDetails = ({ cardId, location }) => {
   const { state, dispatch } = useContext(store);
@@ -80,7 +81,7 @@ const CardDetails = ({ cardId, location }) => {
 
   // TODO: add notes prop in cards
   return (
-    <div>
+    <div className={styles.cardDetails}>
       <Link to={`/decks/${deckId[0]}`}>{`Back to ${parentDeck.name}`}</Link>
       <CardForm
         from={from}

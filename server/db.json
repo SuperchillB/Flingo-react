@@ -684,6 +684,21 @@
         2
       ],
       "id": 43
+    },
+    {
+      "from": "Wine",
+      "fromLang": 1,
+      "to": "Vin",
+      "toLang": 2,
+      "notes": "some wine",
+      "tags": [],
+      "deckId": [
+        11
+      ],
+      "languageId": [
+        2
+      ],
+      "id": 44
     }
   ]
 }

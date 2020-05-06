@@ -3,6 +3,7 @@ import { store } from '../../../store';
 import API from '../../../utils/apiUtils';
 import { API_BASE_URL } from '../../../constants/apiConstants';
 import axios from 'axios';
+import styles from './styles.module.scss';
 
 const DeckInfo = ({
   id = null,
@@ -144,58 +145,64 @@ const DeckInfo = ({
   };
 
   return (
-    <form>
-      <div>{deckData.letter}</div>
-      <div>
-        <label htmlFor="deckTitle">
-          <input
-            id="deckTitle"
-            name="title"
-            type="text"
-            value={deckData.name}
-            placeholder="Title"
-            onChange={(e) => setDeckData({ ...deckData, name: e.target.value })}
-          />
-        </label>
-        <label htmlFor="deckDescription">
-          <textarea
-            name="deckDescription"
-            id="deckDescription"
-            cols="30"
-            rows="5"
-            value={deckData.description}
-            placeholder="Description"
-            onChange={(e) =>
-              setDeckData({ ...deckData, description: e.target.value })
-            }
-          />
-        </label>
-      </div>
-      <div>
-        {referral !== 'home' && (
-          <button onClick={(e) => handleHideDropdown(e)}>
-            Change deck (back btn)
-          </button>
-        )}
-        <button
-          onClick={(e) => handleSubmit(e)}
-          type="submit"
-          value={id ? 'UPDATE_DECK' : 'ADD_DECK'}
-          disabled={deckCreated}
-        >
-          Save
-        </button>
-        {deckDetailsPage && (
-          <button
-            onClick={(e) => handleSubmit(e)}
-            type="submit"
-            value="DELETE_DECK"
-          >
-            Delete Deck
-          </button>
-        )}
-      </div>
-    </form>
+    <div className={styles.deckInfoContainer}>
+      <form className={styles.deckInfo}>
+        <div className={styles.deckInfo__logo}>{deckData.letter}</div>
+        <div className={styles.deckInfo__inputs}>
+          <div>
+            <label className="no-bg" htmlFor="deckTitle">
+              <input
+                id="deckTitle"
+                name="title"
+                type="text"
+                value={deckData.name}
+                placeholder="Deck title"
+                onChange={(e) =>
+                  setDeckData({ ...deckData, name: e.target.value })
+                }
+              />
+              <span></span>
+            </label>
+            <label className="no-bg" htmlFor="deckDescription">
+              <textarea
+                name="deckDescription"
+                id="deckDescription"
+                value={deckData.description}
+                placeholder="Description"
+                onChange={(e) =>
+                  setDeckData({ ...deckData, description: e.target.value })
+                }
+              />
+              <span></span>
+            </label>
+          </div>
+          <div>
+            {referral !== 'home' && (
+              <button onClick={(e) => handleHideDropdown(e)}>
+                Change deck
+              </button>
+            )}
+            <button
+              onClick={(e) => handleSubmit(e)}
+              type="submit"
+              value={id ? 'UPDATE_DECK' : 'ADD_DECK'}
+              disabled={deckCreated}
+            >
+              Save
+            </button>
+            {deckDetailsPage && (
+              <button
+                onClick={(e) => handleSubmit(e)}
+                type="submit"
+                value="DELETE_DECK"
+              >
+                Delete Deck
+              </button>
+            )}
+          </div>
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -7,6 +7,7 @@ import { API_BASE_URL } from '../../constants/apiConstants';
 import API from '../../utils/apiUtils';
 import axios from 'axios';
 import { navigate } from '@reach/router';
+import styles from './styles.module.scss';
 
 const DeckDetails = ({ deckId, location }) => {
   const { state, dispatch } = useContext(store);
@@ -70,15 +71,15 @@ const DeckDetails = ({ deckId, location }) => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div className={styles.deckDetails}>
+      <header>
         <DeckInfo
           {...state.decks.find((deck) => deck.id === Number(deckId))}
           deckDetailsPage={true}
           onDeleteDeck={handleDeleteDeck}
         />
         <CardCreator deckId={Number(deckId)} onAddCard={handleSaveCard} />
-      </div>
+      </header>
       <CardsList
         deck={state.decks.find((deck) => deck.id === Number(deckId))}
       />

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import styles from './styles.module.scss';
 
 const CardForm = ({
   from = '',
@@ -45,83 +46,93 @@ const CardForm = ({
   };
 
   return (
-    <form>
-      <div>
-        <div>
-          <label htmlFor="translateFrom">
-            <input
-              id="translateFrom"
-              type="text"
-              value={fromInput}
-              placeholder="From"
-              onChange={(e) => handleDirty(e.target, fromRef, setFromInput)}
-              // onChange={(e) => setFromInput(e.target.value)}
-            />
-          </label>
-          <label htmlFor="translateTo">
-            <input
-              id="translateTo"
-              type="text"
-              value={toInput}
-              placeholder="To"
-              onChange={(e) => handleDirty(e.target, toRef, setToInput)}
-              // onChange={(e) => setToInput(e.target.value)}
-            />
-          </label>
-        </div>
-        <div></div>
-      </div>
-      <div>
-        <textarea
-          name="cardNotes"
-          id="cardNotes"
-          cols="30"
-          rows="10"
-          value={notesInput}
-          placeholder="Notes"
-          onChange={(e) => handleDirty(e.target, notesRef, setNotesInput)}
-          // onChange={(e) => setNotesInput(e.target.value)}
-        />
-        {!cardDetailsMode && (
-          <button
-            onClick={(e) => handleSubmit(e)}
-            type="submit"
-            disabled={!deckId || disabledSave}
-            value="ADD_CARD"
-          >
-            Add Card
-          </button>
-        )}
-      </div>
-      {cardDetailsMode && (
-        <>
-          <div>
-            <label htmlFor="tagsInput">
-              <input id="tagsInput" type="text" placeholder="Tags" />
+    <div
+      className={`${styles.cardFormContainer} ${
+        cardDetailsMode ? 'cardView' : ''
+      }`}
+    >
+      <form className={`${styles.cardForm}`}>
+        <div className={styles.cardForm__fromTo}>
+          <div className={styles.cardForm__fromTo__inputs}>
+            <label htmlFor="translateFrom">
+              <input
+                id="translateFrom"
+                type="text"
+                value={fromInput}
+                placeholder="From"
+                onChange={(e) => handleDirty(e.target, fromRef, setFromInput)}
+                // onChange={(e) => setFromInput(e.target.value)}
+              />
+              <span></span>
             </label>
-            <div></div>
+            <label htmlFor="translateTo">
+              <input
+                id="translateTo"
+                type="text"
+                value={toInput}
+                placeholder="To"
+                onChange={(e) => handleDirty(e.target, toRef, setToInput)}
+                // onChange={(e) => setToInput(e.target.value)}
+              />
+              <span></span>
+            </label>
           </div>
-          <div>
+          <div></div>
+        </div>
+        <div className={styles.cardForm__notesAddCard}>
+          <label htmlFor="cardNotes">
+            <textarea
+              name="cardNotes"
+              id="cardNotes"
+              value={notesInput}
+              placeholder="Notes"
+              onChange={(e) => handleDirty(e.target, notesRef, setNotesInput)}
+              // onChange={(e) => setNotesInput(e.target.value)}
+            />
+            <span></span>
+          </label>
+          {!cardDetailsMode && (
             <button
               onClick={(e) => handleSubmit(e)}
               type="submit"
-              disabled={disabledSave}
-              value="UPDATE_CARD"
+              disabled={!deckId || disabledSave}
+              value="ADD_CARD"
             >
-              Update Card
+              Add Card
             </button>
-            <button
-              onClick={(e) => handleSubmit(e)}
-              type="submit"
-              disabled={false}
-              value="DELETE_CARD"
-            >
-              Delete Card
-            </button>
-          </div>
-        </>
-      )}
-    </form>
+          )}
+        </div>
+        {cardDetailsMode && (
+          <>
+            <div>
+              <label htmlFor="tagsInput">
+                <input id="tagsInput" type="text" placeholder="Tags" />
+                <span></span>
+              </label>
+              <div></div>
+            </div>
+            <div>
+              <button
+                onClick={(e) => handleSubmit(e)}
+                type="submit"
+                disabled={disabledSave}
+                value="UPDATE_CARD"
+              >
+                Update Card
+              </button>
+              <button
+                onClick={(e) => handleSubmit(e)}
+                type="submit"
+                disabled={false}
+                value="DELETE_CARD"
+              >
+                Delete Card
+              </button>
+            </div>
+          </>
+        )}
+      </form>
+    </div>
   );
 };
 

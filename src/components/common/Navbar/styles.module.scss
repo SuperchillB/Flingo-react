@@ -14,7 +14,7 @@
 
       span {
         @include font-size('h2');
-        font-weight: $weight-bold;
+        font-weight: $weight-medium;
         color: $flingo-darkBlue;
       }
     }
@@ -29,6 +29,14 @@
       display: flex;
       align-items: center;
       color: $mid-grey;
+      &:hover {
+        color: $dark-grey;
+
+        & path,
+        & circle {
+          stroke: $dark-grey;
+        }
+      }
 
       svg {
         width: 2rem;
@@ -39,7 +47,8 @@
       &.active {
         color: $dark-grey;
 
-        path {
+        path,
+        circle {
           stroke: $dark-grey;
         }
       }
