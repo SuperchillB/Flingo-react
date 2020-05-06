@@ -1,0 +1,29 @@
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  width: 100%;
+  position: relative;
+  @include mq($from: 'small') {
+    height: auto;
+    width: auto;
+  }
+
+  label {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  a {
+    margin-right: 3rem;
+
+    span {
+      @include font-size('h2');
+      font-weight: $weight-medium;
+      color: $flingo-darkBlue;
+    }
+  }
+}

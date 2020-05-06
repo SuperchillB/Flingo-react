@@ -5,9 +5,12 @@ import DecksList from '../../components/HomePage/DecksList';
 import API from '../../utils/apiUtils';
 import { API_BASE_URL, GET_DECKS_IN_LANG } from '../../constants/apiConstants';
 import axios from 'axios';
+import { useBreakpoint } from '../BreakpointProvider';
+import styles from './styles.module.scss';
 // import useApi from '../../utils/customHooks/useApi'; // ! TEST
 
 const HomePage = () => {
+  const breakpoints = useBreakpoint();
   const { state, dispatch } = useContext(store);
   const [isAuth, setIsAuth] = useState(true);
   const prevTargetLang = useRef(state.currentTargetLang);
@@ -73,7 +76,7 @@ const HomePage = () => {
   }, [state.currentTargetLang]);
 
   return (
-    <div>
+    <div className={styles.homePage}>
       {isAuth ? (
         <div>{state.loading ? <p>Loading ...</p> : <DecksList />}</div>
       ) : (

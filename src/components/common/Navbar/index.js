@@ -1,71 +1,59 @@
 import React, { useContext, useState } from 'react';
 import { Link } from '@reach/router';
 import { store } from '../../../store';
+import Logo from '../Logo';
+import LangSelector from '../LangSelector';
 import DecksIcon from '../../../assets/flingo-icons-decks.svg';
 import CreateIcon from '../../../assets/flingo-icons-plus.svg';
 import QuizIcon from '../../../assets/flingo-icons-quiz.svg';
 import ProfileIcon from '../../../assets/flingo-icons-profile.svg';
 import styles from './styles.module.scss';
+import { useBreakpoint } from '../../../containers/BreakpointProvider';
 
 const NavBar = ({ onSelectLang }) => {
-  const { state, dispatch } = useContext(store);
-  const [language, setLanguage] = useState(state.currentTargetLang.code);
+  const { currMatch } = useBreakpoint();
+  // const { state, dispatch } = useContext(store);
+  // const [language, setLanguage] = useState(state.currentTargetLang.code);
 
-  const selectLang = (e) => {
-    // setLanguage(state.user.languages.find((l) => l.code === e.target.value));
-    setLanguage(e.target.value);
-    // onSelectLang(e);
-    dispatch({
-      type: 'CHANGE_LANGUAGE',
-      payload: {
-        lang: e.target.value,
-      },
-    });
-  };
+  // const selectLang = (e) => {
+  //   // setLanguage(state.user.languages.find((l) => l.code === e.target.value));
+  //   setLanguage(e.target.value);
+  //   // onSelectLang(e);
+  //   dispatch({
+  //     type: 'CHANGE_LANGUAGE',
+  //     payload: {
+  //       lang: e.target.value,
+  //     },
+  //   });
+  // };
   return (
     <nav className={styles.navbar}>
       <div>
-        <Link to="/">
-          <span>flingo</span>
-        </Link>
-        {window.location.pathname === '/' && (
-          <label htmlFor="language-dropdown">
-            <select
-              onChange={selectLang}
-              onBlur={() => null}
-              name="language-dropdown"
-              id="language-dropdown"
-              value={language}
-            >
-              {state.user.languages.map((lang) => (
-                <option key={lang.id} value={lang.code}>
-                  {lang.name}
-                </option>
-              ))}
-            </select>
-          </label>
+        {currMatch !== 'xs' && <Logo />}
+        {window.location.pathname === '/' && currMatch !== 'xs' && (
+          <LangSelector />
         )}
       </div>
       <ul>
         <li>
           <NavLink to="/">
-            <DecksIcon /> Decks
+            <DecksIcon /> <span>Decks</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/create" state={{ referral: 'navbar' }}>
             <CreateIcon />
-            Create
+            <span>Create</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/quiz">
-            <QuizIcon /> Quiz
+            <QuizIcon /> <span>Quiz</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/profile">
-            <ProfileIcon /> Profile
+            <ProfileIcon /> <span>Profile</span>
           </NavLink>
         </li>
       </ul>

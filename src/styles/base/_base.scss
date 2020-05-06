@@ -19,6 +19,26 @@ body {
   line-height: 1.5;
   margin: 0;
   position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $dark-grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $flingo-darkBlue;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
 }
 
 blockquote,
@@ -55,7 +75,7 @@ a {
   text-decoration: none;
 }
 
-label:not(:global(.no-bg)) {
+label:not(:global(.no-bg)):not(:global(.no-styles)) {
   width: 100%;
   background-color: $white;
   border-radius: 3rem;
@@ -130,7 +150,8 @@ label:not(:global(.no-bg)) {
   }
 }
 
-label:global(.no-bg) {
+label:global(.no-bg),
+label:not(:global(.no-styles)) {
   width: 100%;
   position: relative;
   border-bottom: 0.2rem solid $mid-grey;
