@@ -6,7 +6,6 @@ Short term:
 - Make 'save' button in deck view dynamically active (only show when something has changed => new deck info)
 - Make 'update' button in card view dynamically active (only show when something has changed => new card info)
 - Create tags logic (CardDetails)
-- Create Sass config (create sassrc.js file and add module.exports = { data: '@import "./src/styles";' }; in it to import globally a single file => see https://github.com/parcel-bundler/parcel/issues/1725)
 
 ---
 
@@ -19,8 +18,10 @@ Longer term:
 - Add dynamic imports
 - Create logic to cache API calls if not using localStorage
 - Add translation API logic for cards
-- Add search bar in homepage to searcg for both decks AND cards
-- Create atom components for form elements (buttons, inputs, textarea, ...)
+- Add search bar in homepage to search for both decks AND cards
+- Create custom radio/checkbox inputs (https://css-tricks.com/custom-styling-form-inputs-with-modern-css-features/)
 - Create cssnano config (https://parceljs.org/css.html)
 - Create 404 page
 - Create background blob (https://css-tricks.com/blobs/)
+- Add route transitions (https://reach.tech/router/example/animation)
+- Add animations (https://www.framer.com/motion/)

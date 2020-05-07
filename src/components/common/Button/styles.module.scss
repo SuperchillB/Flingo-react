@@ -10,9 +10,32 @@
   cursor: pointer;
   align-self: flex-start;
   padding: 1rem 2rem;
+  position: relative;
 
   &[disabled] {
     background-color: $mid-grey;
     cursor: default;
+  }
+
+  &:global(.small) {
+    @include font-size('t4');
+    height: 3rem;
+    padding: 0 1rem;
+  }
+
+  &:global(.normal) {
+    @include font-size('t5');
+    height: 4rem;
+    padding: 1rem 2rem;
+  }
+
+  &:global(.big) {
+    @include font-size('t6');
+    height: 5rem;
+    padding: 1rem 2rem;
+  }
+
+  &:not([disabled]):hover {
+    background: darken($flingo-darkBlue, 5%);
   }
 }

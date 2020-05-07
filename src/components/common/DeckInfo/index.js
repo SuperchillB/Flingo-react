@@ -120,13 +120,6 @@ const DeckInfo = ({
         });
         payload = { deletedDeckId: id };
       }
-      // Dispatch to reducer
-      // dispatch({
-      //   type: action,
-      //   payload: {
-      //     deck: data,
-      //   },
-      // });
       dispatch({
         type: actionType,
         payload,
@@ -172,42 +165,18 @@ const DeckInfo = ({
                 setDeckData({ ...deckData, description: e.target.value })
               }
             />
-            {/* <label className="no-bg" htmlFor="deckTitle">
-              <input
-                id="deckTitle"
-                name="title"
-                type="text"
-                value={deckData.name}
-                placeholder="Deck title"
-                onChange={(e) =>
-                  setDeckData({ ...deckData, name: e.target.value })
-                }
-              />
-              <span></span>
-            </label>
-            <label className="no-bg" htmlFor="deckDescription">
-              <textarea
-                name="deckDescription"
-                id="deckDescription"
-                value={deckData.description}
-                placeholder="Description"
-                onChange={(e) =>
-                  setDeckData({ ...deckData, description: e.target.value })
-                }
-              />
-              <span></span>
-            </label> */}
           </div>
           <div>
             {referral !== 'home' && (
-              <Button onClickHandler={(e) => handleHideDropdown(e)}>
+              <Button
+                size="small"
+                onClickHandler={(e) => handleHideDropdown(e)}
+              >
                 Change deck
               </Button>
-              // <button onClick={(e) => handleHideDropdown(e)}>
-              //   Change deck
-              // </button>
             )}
             <Button
+              size="small"
               onClickHandler={(e) => handleSubmit(e)}
               type="submit"
               isDisabled={deckCreated}
@@ -215,29 +184,15 @@ const DeckInfo = ({
             >
               Save
             </Button>
-            {/* <button
-              onClick={(e) => handleSubmit(e)}
-              type="submit"
-              value={id ? 'UPDATE_DECK' : 'ADD_DECK'}
-              disabled={deckCreated}
-            >
-              Save
-            </button> */}
             {deckDetailsPage && (
               <Button
+                size="small"
                 onClickHandler={(e) => handleSubmit(e)}
                 type="submit"
                 value="DELETE_DECK"
               >
                 Delete Deck
               </Button>
-              // <button
-              //   onClick={(e) => handleSubmit(e)}
-              //   type="submit"
-              //   value="DELETE_DECK"
-              // >
-              //   Delete Deck
-              // </button>
             )}
           </div>
         </div>

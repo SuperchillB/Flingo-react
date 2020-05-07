@@ -5,6 +5,7 @@
   background-color: $white;
   border-radius: 3rem;
   box-shadow: 0px 0px 8px -5px $dark-grey;
+  transition: all 0.2s ease-out;
 
   a {
     width: 100%;
@@ -37,5 +38,9 @@
     p {
       color: $white;
     }
+  }
+
+  &:hover {
+    transform: translateY(-1rem);
   }
 }

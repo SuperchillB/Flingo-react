@@ -1,11 +1,15 @@
 .customInput {
   &:global(.input--pill) {
+    @include font-size('t4');
     width: 100%;
     background-color: $white;
     border-radius: 3rem;
     margin-bottom: 1rem;
     position: relative;
     z-index: 1;
+    @include mq($from: 'small') {
+      @include font-size('t5');
+    }
 
     input[type='text'],
     textarea {
@@ -75,10 +79,14 @@
   }
 
   &:global(.input--line) {
+    @include font-size('t4');
     width: 100%;
     position: relative;
     border-bottom: 0.2rem solid $mid-grey;
     margin-bottom: 1rem;
+    @include mq($from: 'small') {
+      @include font-size('t5');
+    }
 
     input[type='text'],
     textarea {
@@ -122,6 +130,17 @@
           background: $dark-grey;
         }
       }
+    }
+  }
+
+  &:global(.grey-bg) {
+    background-color: $light-grey;
+
+    input,
+    textarea,
+    input + span,
+    textarea + span {
+      background-color: $light-grey !important;
     }
   }
 }

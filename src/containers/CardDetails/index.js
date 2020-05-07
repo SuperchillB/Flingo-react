@@ -10,13 +10,13 @@ import styles from './styles.module.scss';
 const CardDetails = ({ cardId, location }) => {
   const { state, dispatch } = useContext(store);
   const {
-    from,
-    fromLang,
-    to,
-    toLang,
-    notes,
-    tags,
-    deckId,
+    from = '',
+    fromLang = '',
+    to = '',
+    toLang = '',
+    notes = '',
+    tags = [],
+    deckId = null,
   } = location.state.card;
   const parentDeck = state.decks.find((d) => d.id === deckId[0]);
 

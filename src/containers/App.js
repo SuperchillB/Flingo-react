@@ -30,6 +30,7 @@ const App = () => {
         <HomePage path="/" />
         <DeckDetails path="decks/:deckId" />
         <CardDetails path="cards/:cardId" />
+        <CardDetails path="cards/new-card" />
         <CreatePage path="/create" />
         <QuizPage path="/quiz" />
         <ProfilePage path="/profile" />

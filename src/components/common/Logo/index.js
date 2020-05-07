@@ -9,7 +9,9 @@ const Logo = () => {
 
   return (
     <div className={styles.logoContainer}>
-      {currMatch === 'xs' && <LangSelector />}
+      {currMatch === 'xs' && window.location.pathname === '/' && (
+        <LangSelector />
+      )}
       <Link to="/">
         <span>flingo</span>
       </Link>

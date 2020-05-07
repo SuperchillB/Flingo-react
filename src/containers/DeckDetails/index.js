@@ -1,19 +1,35 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { store } from '../../store';
 import DeckInfo from '../../components/common/DeckInfo';
-import CardCreator from '../../components/common/CardCreator';
+import CardCreator2 from '../../components/common/CardCreator2';
 import CardsList from '../../components/DeckDetails/CardsList';
+import Button from '../../components/common/Button';
 import { API_BASE_URL } from '../../constants/apiConstants';
 import API from '../../utils/apiUtils';
 import axios from 'axios';
 import { navigate } from '@reach/router';
 import styles from './styles.module.scss';
+import slideTransition from './slide.module.scss';
+import { useBreakpoint } from '../BreakpointProvider';
+import { CSSTransition } from 'react-transition-group';
 
 const DeckDetails = ({ deckId, location }) => {
+  const { currMatch } = useBreakpoint();
   const { state, dispatch } = useContext(store);
+  const [openCardCreator, setOpenCardCreator] = useState(false);
   console.log('DeckDetails', state);
 
   const handleDeleteDeck = () => navigate('/');
+
+  const handleCreateCard = () => {
+    if (currMatch === 'xs') {
+      navigate('/cards/new-card', {
+        state: { card: { deckId: [Number(deckId)] } },
+      });
+    } else {
+      setOpenCardCreator(true);
+    }
+  };
 
   const handleSaveCard = () => {
     console.log('handleSaveCard');
@@ -78,7 +94,25 @@ const DeckDetails = ({ deckId, location }) => {
           deckDetailsPage={true}
           onDeleteDeck={handleDeleteDeck}
         />
-        <CardCreator deckId={Number(deckId)} onAddCard={handleSaveCard} />
+        <div>
+          {!openCardCreator && (
+            <Button onClickHandler={handleCreateCard}>New Card</Button>
+          )}
+          {currMatch !== 'xs' && (
+            <CSSTransition
+              in={openCardCreator}
+              timeout={300}
+              classNames={slideTransition}
+              unmountOnExit
+            >
+              <CardCreator2
+                deckId={Number(deckId)}
+                onAddCard={handleSaveCard}
+                onClosePanel={() => setOpenCardCreator(false)}
+              />
+            </CSSTransition>
+          )}
+        </div>
       </header>
       <CardsList
         deck={state.decks.find((deck) => deck.id === Number(deckId))}

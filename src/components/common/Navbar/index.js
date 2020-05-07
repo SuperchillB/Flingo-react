@@ -12,20 +12,6 @@ import { useBreakpoint } from '../../../containers/BreakpointProvider';
 
 const NavBar = ({ onSelectLang }) => {
   const { currMatch } = useBreakpoint();
-  // const { state, dispatch } = useContext(store);
-  // const [language, setLanguage] = useState(state.currentTargetLang.code);
-
-  // const selectLang = (e) => {
-  //   // setLanguage(state.user.languages.find((l) => l.code === e.target.value));
-  //   setLanguage(e.target.value);
-  //   // onSelectLang(e);
-  //   dispatch({
-  //     type: 'CHANGE_LANGUAGE',
-  //     payload: {
-  //       lang: e.target.value,
-  //     },
-  //   });
-  // };
   return (
     <nav className={styles.navbar}>
       <div>

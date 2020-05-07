@@ -7,10 +7,11 @@ const Button = ({
   onClickHandler = () => {},
   type = 'button',
   isDisabled = false,
+  size = 'normal',
   value = '',
 }) => (
   <button
-    className={styles.customButton}
+    className={`${styles.customButton} ${size}`}
     onClick={onClickHandler}
     type={type}
     disabled={isDisabled}

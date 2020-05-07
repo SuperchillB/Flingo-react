@@ -1,9 +1,41 @@
 .deckDetails {
   width: 100%;
+  padding: 0 2rem;
+  margin-bottom: 8rem;
+  @include mq($from: 'small') {
+    margin: 0;
+    height: calc(100vh - 7rem);
+    display: flex;
+    flex-direction: column;
+  }
 
   header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    @include mq($from: 'medium') {
+      flex-direction: row;
+    }
+
+    > div {
+      margin: 2rem 0;
+      // flex: 1 0 0;
+
+      &:last-of-type {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+        height: 12rem;
+        @include mq($from: 'small') {
+          min-height: 25rem;
+          height: auto;
+        }
+
+        button {
+          align-self: center;
+        }
+      }
+    }
   }
 }
