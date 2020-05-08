@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { Link } from '@reach/router';
 import { store } from '../../store';
+import InputField from '../../components/common/InputField';
 import DecksList from '../../components/HomePage/DecksList';
 import API from '../../utils/apiUtils';
 import { API_BASE_URL, GET_DECKS_IN_LANG } from '../../constants/apiConstants';
@@ -77,16 +78,36 @@ const HomePage = () => {
 
   return (
     <div className={styles.homePage}>
-      {isAuth ? (
-        <div>{state.loading ? <p>Loading ...</p> : <DecksList />}</div>
-      ) : (
-        <div>
-          <h2>You currently have no decks</h2>
-          <Link to="/create" state={{ referral: 'home' }}>
-            New deck
-          </Link>
-        </div>
-      )}
+      <div className={styles.homePageInner}>
+        {isAuth ? (
+          state.loading ? (
+            <p>Loading ...</p>
+          ) : (
+            <>
+              <div className={styles.searchBar}>
+                <InputField
+                  classNames="input--pill"
+                  id="searchDecksOrCards"
+                  type="text"
+                  value={null}
+                  placeholder="Search for deck or card"
+                  onChangeHandler={() => {}}
+                />
+              </div>
+              <div className={styles.deckListContainer}>
+                <DecksList />
+              </div>
+            </>
+          )
+        ) : (
+          <div>
+            <h2>You currently have no decks</h2>
+            <Link to="/create" state={{ referral: 'home' }}>
+              New deck
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

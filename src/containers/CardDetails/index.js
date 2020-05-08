@@ -91,7 +91,7 @@ const CardDetails = ({ cardId, location }) => {
         notes={notes}
         tags={tags}
         deckId={deckId[0]}
-        cardDetailsMode={true}
+        cardView={true}
         onSubmit={handleSubmittedCard}
       />
     </div>

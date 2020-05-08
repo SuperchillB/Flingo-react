@@ -20,16 +20,21 @@
 
     > div {
       margin: 2rem 0;
-      // flex: 1 0 0;
+      @include mq($from: 'small') {
+        margin: 2rem 0;
+        // flex: 1 0 0;
+      }
 
       &:last-of-type {
         display: flex;
         justify-content: center;
         width: 60%;
-        height: 12rem;
+        height: 6rem;
+        margin-top: 0;
         @include mq($from: 'small') {
           min-height: 25rem;
           height: auto;
+          margin-top: 2rem;
         }
 
         button {

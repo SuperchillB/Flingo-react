@@ -11,7 +11,8 @@ const CardForm = ({
   notes = '',
   tags = [],
   deckId = null,
-  cardDetailsMode = false,
+  cardView = false,
+  deckView = false,
   onSubmit = () => {},
 }) => {
   const [fromInput, setFromInput] = useState(from);
@@ -49,11 +50,12 @@ const CardForm = ({
 
   return (
     <div className={styles.cardFormContainer}>
-      {!cardDetailsMode && <p>Add new card</p>}
+      {deckView && <p>Add new card</p>}
       <form className={`${styles.cardForm}`}>
-        <div className={styles.cardForm__fromTo}>
+        {/* <div className={styles.cardForm__fromTo}> */}
+        <div className={styles.cardForm__inputs}>
           <InputField
-            classNames={`input--pill ${!cardDetailsMode && 'grey-bg'}`}
+            classNames={`input--pill ${deckView && 'grey-bg'}`}
             id="translateFrom"
             type="text"
             value={fromInput}
@@ -63,7 +65,7 @@ const CardForm = ({
             }
           />
           <InputField
-            classNames={`input--pill ${!cardDetailsMode && 'grey-bg'}`}
+            classNames={`input--pill ${deckView && 'grey-bg'}`}
             id="translateTo"
             type="text"
             value={toInput}
@@ -71,10 +73,8 @@ const CardForm = ({
             onChangeHandler={(e) => handleDirty(e.target, toRef, setToInput)}
           />
           <div></div>
-        </div>
-        <div className={styles.cardForm__notesAddCard}>
           <InputField
-            classNames={`input--pill ${!cardDetailsMode && 'grey-bg'}`}
+            classNames={`input--pill ${deckView && 'grey-bg'}`}
             id="cardNotes"
             type="textarea"
             value={notesInput}
@@ -83,9 +83,29 @@ const CardForm = ({
               handleDirty(e.target, notesRef, setNotesInput)
             }
           />
+          {cardView && (
+            <InputField
+              classNames={`input--pill ${deckView && 'grey-bg'}`}
+              id="tagsInput"
+              type="text"
+              placeholder="Tags"
+            />
+          )}
         </div>
-        <div>
-          {!cardDetailsMode ? (
+        {/* <div className={styles.cardForm__notesAddCard}>
+          <InputField
+            classNames={`input--pill ${!cardView && 'grey-bg'}`}
+            id="cardNotes"
+            type="textarea"
+            value={notesInput}
+            placeholder="Notes"
+            onChangeHandler={(e) =>
+              handleDirty(e.target, notesRef, setNotesInput)
+            }
+          />
+        </div> */}
+        <div className={styles.cardForm__buttons}>
+          {!cardView ? (
             <Button
               onClickHandler={(e) => handleSubmit(e)}
               type="submit"
@@ -96,33 +116,22 @@ const CardForm = ({
             </Button>
           ) : (
             <>
-              <div>
-                <InputField
-                  classNames={`input--pill ${!cardDetailsMode && 'grey-bg'}`}
-                  id="tagsInput"
-                  type="text"
-                  placeholder="Tags"
-                />
-                <div></div>
-              </div>
-              <div>
-                <Button
-                  onClickHandler={(e) => handleSubmit(e)}
-                  type="submit"
-                  isDisabled={disabledSave}
-                  value="UPDATE_CARD"
-                >
-                  Save
-                </Button>
-                <Button
-                  onClickHandler={(e) => handleSubmit(e)}
-                  type="submit"
-                  isDisabled={false}
-                  value="DELETE_CARD"
-                >
-                  Delete
-                </Button>
-              </div>
+              <Button
+                onClickHandler={(e) => handleSubmit(e)}
+                type="submit"
+                isDisabled={disabledSave}
+                value="UPDATE_CARD"
+              >
+                Save
+              </Button>
+              <Button
+                onClickHandler={(e) => handleSubmit(e)}
+                type="submit"
+                isDisabled={false}
+                value="DELETE_CARD"
+              >
+                Delete
+              </Button>
             </>
           )}
         </div>

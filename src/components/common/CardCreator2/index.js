@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import CardForm from '../CardForm';
 import { store } from '../../../store';
 import API from '../../../utils/apiUtils';
@@ -6,8 +6,10 @@ import { API_BASE_URL } from '../../../constants/apiConstants';
 import axios from 'axios';
 import CreateIcon from '../../../assets/flingo-icons-plus.svg';
 import styles from './styles.module.scss';
+import { useBreakpoint } from '../../../containers/BreakpointProvider';
 
 const CardCreator2 = ({ deckId = null, onAddCard, onClosePanel }) => {
+  const { currMatch } = useBreakpoint();
   const { state, dispatch } = useContext(store);
 
   const saveCard = async ({ cardData }) => {
@@ -58,11 +60,21 @@ const CardCreator2 = ({ deckId = null, onAddCard, onClosePanel }) => {
     }
   };
 
+  useEffect(() => {
+    if (currMatch === 'xs') {
+      return () => {
+        document.body.classList.remove('modal-open');
+      };
+    }
+    return;
+  }, []);
+
   return (
     <div className={styles.cardCreator}>
       <CreateIcon onClick={onClosePanel} />
       <CardForm
         deckId={deckId}
+        deckView={true}
         onSubmit={saveCard} // No need to catch e.target.value since CardCreator only does POST requests
       />
     </div>

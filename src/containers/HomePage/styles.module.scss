@@ -5,10 +5,31 @@
     margin: 0;
     height: calc(100vh - 7rem);
     display: flex;
-    align-items: center;
+    // align-items: center;
 
-    div:first-of-type {
-      width: 100%;
+    // div:first-of-type {
+    //   width: 100%;
+    // }
+  }
+
+  .homePageInner {
+    margin-top: 3rem;
+    width: 100%;
+
+    & > div {
+      padding: 3rem 0;
+    }
+
+    .searchBar {
+      display: flex;
+      justify-content: center;
+
+      label {
+        width: 80%;
+        @include mq($from: 'small') {
+          width: 50%;
+        }
+      }
     }
   }
 }

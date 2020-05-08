@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Router, Link } from '@reach/router';
 import { store } from '../store';
+import Blob from '../assets/flingo-blob.svg';
 import Logo from '../components/common/Logo';
 import NavBar from '../components/common/Navbar';
 import HomePage from './HomePage';
@@ -24,13 +25,13 @@ const App = () => {
   };
   return (
     <React.StrictMode>
+      <Blob className="blob" />
       {currMatch === 'xs' && <Logo />}
       <NavBar onSelectLang={selectLangHandler} />
       <Router>
         <HomePage path="/" />
         <DeckDetails path="decks/:deckId" />
         <CardDetails path="cards/:cardId" />
-        <CardDetails path="cards/new-card" />
         <CreatePage path="/create" />
         <QuizPage path="/quiz" />
         <ProfilePage path="/profile" />

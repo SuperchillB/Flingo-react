@@ -1,6 +1,10 @@
 .cardList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 38rem);
+  grid-template-columns: repeat(auto-fill, 34rem);
   grid-gap: 2rem;
   justify-content: center;
+
+  @include mq($from: 'small') {
+    grid-template-columns: repeat(auto-fill, 38rem);
+  }
 }

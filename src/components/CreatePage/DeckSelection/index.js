@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import DeckInfo from '../common/DeckInfo';
+import DeckInfo from '../../common/DeckInfo';
+import styles from './styles.module.scss';
 
 const DeckSelection = ({ decks, onSaveDeck }) => {
   const [hideDropdown, setHideDropdown] = useState(false);
@@ -27,7 +28,8 @@ const DeckSelection = ({ decks, onSaveDeck }) => {
   return (
     <>
       {hideDropdown ? (
-        <div>
+        <div className={styles.deckSelection}>
+          <p>Create new deck to add card to</p>
           <DeckInfo
             referral="navbar"
             onHideDropdown={handleHideDropdown}
@@ -35,25 +37,27 @@ const DeckSelection = ({ decks, onSaveDeck }) => {
           />
         </div>
       ) : (
-        <div>
-          <h2>Select deck to add card to</h2>
-          <label htmlFor="deckList">
-            <select
-              onChange={(e) => handleHideDropdown(e)}
-              onBlur={() => {}}
-              name="deckList"
-              id="deckList"
-              value={selectedDeck}
-            >
-              <option value="default">Select deck</option>
-              {decks.map((deck) => (
-                <option key={deck.id} value={deck.id}>
-                  {deck.name}
-                </option>
-              ))}
-              <option value="newDeck">New deck</option>
-            </select>
-          </label>
+        <div className={styles.deckSelection}>
+          <p>Select deck to add card to</p>
+          <div>
+            <label htmlFor="deckList">
+              <select
+                onChange={(e) => handleHideDropdown(e)}
+                onBlur={() => {}}
+                name="deckList"
+                id="deckList"
+                value={selectedDeck}
+              >
+                <option value="default">Select deck</option>
+                {decks.map((deck) => (
+                  <option key={deck.id} value={deck.id}>
+                    {deck.name}
+                  </option>
+                ))}
+                <option value="newDeck">New deck</option>
+              </select>
+            </label>
+          </div>
         </div>
       )}
     </>

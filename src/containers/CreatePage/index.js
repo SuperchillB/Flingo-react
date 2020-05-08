@@ -4,6 +4,7 @@ import DeckInfo from '../../components/common/DeckInfo';
 import DeckSelection from '../../components/CreatePage/DeckSelection';
 import CardCreator from '../../components/common/CardCreator';
 import { navigate } from '@reach/router';
+import styles from './styles.module.scss';
 
 const CreatePage = ({ location }) => {
   const { state } = useContext(store);
@@ -18,14 +19,17 @@ const CreatePage = ({ location }) => {
     navigate(`/decks/${deckId}`); // TODO: ADD REFERRAL HERE to distinguish where we came from when being redirected to DeckDetails
 
   return (
-    <div>
+    <div className={styles.createPage}>
       {referral === 'home' ? (
-        <DeckInfo onSaveDeck={handleSaveDeck} />
+        <div>
+          <p>Create new deck to add card to</p>
+          <DeckInfo onSaveDeck={handleSaveDeck} />
+        </div>
       ) : (
         <DeckSelection decks={state.decks} onSaveDeck={handleSaveDeck} />
       )}
       <div>
-        <h2>Create a card</h2>
+        <p>Create a card</p>
         <CardCreator deckId={deckId} onAddCard={handleSaveCard} />
       </div>
     </div>

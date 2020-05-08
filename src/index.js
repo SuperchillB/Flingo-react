@@ -4,6 +4,7 @@ import App from './containers/App';
 import { store, StateProvider } from './store';
 import { BreakpointProvider } from './containers/BreakpointProvider';
 import { mediaQueries } from './styles/breakpoints';
+import './styles/main.scss';
 
 render(
   <BreakpointProvider queries={mediaQueries}>

@@ -21,14 +21,10 @@ const DeckDetails = ({ deckId, location }) => {
 
   const handleDeleteDeck = () => navigate('/');
 
-  const handleCreateCard = () => {
-    if (currMatch === 'xs') {
-      navigate('/cards/new-card', {
-        state: { card: { deckId: [Number(deckId)] } },
-      });
-    } else {
-      setOpenCardCreator(true);
-    }
+  const handleCreateNewCard = () => {
+    // if (currMatch === 'xs') document.body.classList.add('modal-open');
+    if (currMatch === 'xs') document.body.classList.add('modal-open');
+    setOpenCardCreator(true);
   };
 
   const handleSaveCard = () => {
@@ -96,22 +92,20 @@ const DeckDetails = ({ deckId, location }) => {
         />
         <div>
           {!openCardCreator && (
-            <Button onClickHandler={handleCreateCard}>New Card</Button>
+            <Button onClickHandler={handleCreateNewCard}>New Card</Button>
           )}
-          {currMatch !== 'xs' && (
-            <CSSTransition
-              in={openCardCreator}
-              timeout={300}
-              classNames={slideTransition}
-              unmountOnExit
-            >
-              <CardCreator2
-                deckId={Number(deckId)}
-                onAddCard={handleSaveCard}
-                onClosePanel={() => setOpenCardCreator(false)}
-              />
-            </CSSTransition>
-          )}
+          <CSSTransition
+            in={openCardCreator}
+            timeout={300}
+            classNames={slideTransition}
+            unmountOnExit
+          >
+            <CardCreator2
+              deckId={Number(deckId)}
+              onAddCard={handleSaveCard}
+              onClosePanel={() => setOpenCardCreator(false)}
+            />
+          </CSSTransition>
         </div>
       </header>
       <CardsList

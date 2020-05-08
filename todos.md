@@ -25,3 +25,5 @@ Longer term:
 - Create background blob (https://css-tricks.com/blobs/)
 - Add route transitions (https://reach.tech/router/example/animation)
 - Add animations (https://www.framer.com/motion/)
+- Test accessibility with react-axe (https://github.com/dequelabs/react-axe)
+- Make blob move when route changes (https://github.com/reach/router/issues/262)

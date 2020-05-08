@@ -1,6 +1,6 @@
 .deckList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 13rem);
+  grid-template-columns: repeat(auto-fit, 13rem);
   grid-gap: 2rem;
   justify-content: center;
 }

@@ -1,0 +1,34 @@
+.createPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  margin: 2rem 0 8rem;
+  text-align: center;
+  @include mq($from: 'small') {
+    margin: 0;
+    height: calc(100vh - 7rem);
+  }
+
+  & > div {
+    width: 100%;
+    margin: 1rem 0 3rem;
+
+    // &:first-of-type {
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: center;
+
+    //   & > div {
+    //     margin-top: 3rem;
+    //   }
+    // }
+
+    p {
+      text-transform: uppercase;
+      color: $dark-grey;
+      margin-bottom: 1rem;
+    }
+  }
+}
