@@ -1,7 +1,14 @@
 import React, { useContext } from 'react';
-import { Router, Link } from '@reach/router';
+import {
+  Router,
+  Link,
+  LocationProvider,
+  createHistory,
+  createMemorySource,
+  globalHistory,
+} from '@reach/router';
 import { store } from '../store';
-import Blob from '../assets/flingo-blob.svg';
+import Blob from '../components/common/Blob';
 import Logo from '../components/common/Logo';
 import NavBar from '../components/common/Navbar';
 import HomePage from './HomePage';
@@ -23,11 +30,25 @@ const App = () => {
       },
     });
   };
+
+  // // for some types of tests you want a memory source
+  // let source = createMemorySource('/');
+  // let history = createHistory(source);
+
+  // history.listen((data) => {
+  //   console.log(data);
+  // });
+
+  // globalHistory.listen((data) => {
+  //   console.log(data);
+  // });
+
   return (
     <React.StrictMode>
-      <Blob className="blob" />
+      <Blob />
       {currMatch === 'xs' && <Logo />}
       <NavBar onSelectLang={selectLangHandler} />
+      {/* <LocationProvider history={history}> */}
       <Router>
         <HomePage path="/" />
         <DeckDetails path="decks/:deckId" />
@@ -36,6 +57,7 @@ const App = () => {
         <QuizPage path="/quiz" />
         <ProfilePage path="/profile" />
       </Router>
+      {/* </LocationProvider> */}
     </React.StrictMode>
   );
 };

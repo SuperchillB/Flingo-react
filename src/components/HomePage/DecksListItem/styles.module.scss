@@ -7,6 +7,31 @@
   box-shadow: 0px 0px 8px -5px $dark-grey;
   transition: all 0.2s ease-out;
 
+  & > span {
+    display: none;
+    @include mq($from: 'small') {
+      content: 'x';
+      display: block;
+      opacity: 0;
+      height: 3rem;
+      width: 3rem;
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      text-align: center;
+      border: 0.1rem solid #3a3a3a;
+      border-radius: 100%;
+      background-color: #3a3a3a;
+      color: white;
+      cursor: pointer;
+      transition: opacity 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
   a {
     width: 100%;
     height: 100%;

@@ -82,7 +82,7 @@
     @include font-size('t4');
     width: 100%;
     position: relative;
-    border-bottom: 0.2rem solid $mid-grey;
+    border-bottom: 0.1rem solid $mid-grey;
     margin-bottom: 1rem;
     @include mq($from: 'small') {
       @include font-size('t5');
@@ -122,10 +122,10 @@
           content: '';
           display: block;
           position: absolute;
-          bottom: -0.2rem;
+          bottom: -0.1rem;
           left: 0;
           width: 0;
-          height: 0.2rem;
+          height: 0.1rem;
           transition: all 0.3s;
           background: $dark-grey;
         }

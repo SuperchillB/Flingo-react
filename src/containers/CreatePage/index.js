@@ -21,7 +21,7 @@ const CreatePage = ({ location }) => {
   return (
     <div className={styles.createPage}>
       {referral === 'home' ? (
-        <div>
+        <div className={styles.deckInfo}>
           <p>Create new deck to add card to</p>
           <DeckInfo onSaveDeck={handleSaveDeck} />
         </div>

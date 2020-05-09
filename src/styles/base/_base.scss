@@ -203,13 +203,13 @@ a {
 //   }
 // }
 
-:global {
-  .blob {
-    pointer-events: none;
-    position: fixed;
-    object-fit: cover;
-    z-index: -1;
-    transform: translate(40rem, -16rem) rotate(45deg);
-    transition: transform 0.3s ease 0s;
-  }
-}
+// :global {
+//   .blob {
+//     pointer-events: none;
+//     position: fixed;
+//     object-fit: cover;
+//     z-index: -1;
+//     transform: translate(40rem, -16rem) rotate(45deg);
+//     transition: transform 0.3s ease 0s;
+//   }
+// }
