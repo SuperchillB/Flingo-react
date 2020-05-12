@@ -3,6 +3,7 @@
   grid-template-columns: repeat(auto-fit, 34rem);
   grid-gap: 2rem;
   justify-content: center;
+  margin-top: 3rem;
 
   @include mq($from: 'small') {
     grid-template-columns: repeat(auto-fit, 38rem);

@@ -1,0 +1,112 @@
+.tooltip {
+  @include font-size('t1');
+  position: absolute;
+  color: $white;
+  background: $dark-grey;
+  display: inline-block;
+  width: 12rem;
+  max-width: 16rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s;
+  z-index: 20;
+  text-transform: uppercase;
+
+  &[data-position='top'] {
+    bottom: 100%;
+    // left: -130%;
+    margin-bottom: 1rem;
+    // transform: translateY(1rem);
+    transform: translate(-50%, 0.5rem);
+    left: 50%;
+
+    &::after {
+      border-top-color: $dark-grey;
+      border-bottom: none;
+      // bottom: 101%;
+      bottom: -1rem;
+      left: 50%;
+      margin-bottom: 0.4rem;
+    }
+
+    // &:hover {
+    //   transform: translateY(0rem);
+    // }
+  }
+
+  &[data-position='right'] {
+    top: -5%;
+    left: 100%;
+    margin-left: 1rem;
+    transform: translateX(-0.5rem);
+
+    &::after {
+      border-right-color: $dark-grey;
+      border-left: none;
+      top: calc(50% - 0.6rem);
+      // left: calc(100% + 0.4rem);
+      left: -0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    // &:hover {
+    //   transform: translateX(1rem);
+    // }
+  }
+
+  &[data-position='bottom'] {
+    top: 100%;
+    // left: -130%;
+    margin-top: 1rem;
+    // transform: translateY(-1rem);
+    transform: translate(-50%, -0.5rem);
+    left: 50%;
+
+    &::after {
+      border-bottom-color: $dark-grey;
+      border-top: none;
+      top: -1rem;
+      left: 50%;
+      // top: 100%;
+      // left: 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    // &:hover {
+    //   transform: translateY(0rem);
+    // }
+  }
+
+  &[data-position='left'] {
+    top: -50%;
+    right: 100%;
+    margin-top: 1rem;
+    transform: translateX(0rem);
+
+    &::after {
+      border-left-color: $dark-grey;
+      border-right: none;
+      top: 50%;
+      right: -1.5rem;
+      margin-top: -0.6rem;
+      margin-right: 0.4rem;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0.6rem solid transparent;
+    content: '';
+  }
+
+  // &:hover {
+  //   visibility: visible;
+  //   opacity: 0.85;
+  //   transform: translateY(0rem);
+  // }
+}

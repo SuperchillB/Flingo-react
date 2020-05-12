@@ -6,12 +6,13 @@ const Button = ({
   classNames = '',
   onClickHandler = () => {},
   type = 'button',
+  style = '',
   isDisabled = false,
   size = 'normal',
   value = '',
 }) => (
   <button
-    className={`${styles.customButton} ${size}`}
+    className={`${styles.customButton} ${size} ${style}`}
     onClick={onClickHandler}
     type={type}
     disabled={isDisabled}

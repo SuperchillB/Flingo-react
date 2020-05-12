@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { store } from '../../store';
+import { deckState } from '../App';
 import DeckInfo from '../../components/common/DeckInfo';
 import CardCreator2 from '../../components/common/CardCreator2';
 import CardsList from '../../components/DeckDetails/CardsList';
@@ -12,12 +13,13 @@ import styles from './styles.module.scss';
 import slideTransition from './slide.module.scss';
 import { useBreakpoint } from '../BreakpointProvider';
 import { CSSTransition } from 'react-transition-group';
+import CardOptions from '../../components/DeckDetails/CardOptions';
 
 const DeckDetails = ({ deckId, location }) => {
   const { currMatch } = useBreakpoint();
   const { state, dispatch } = useContext(store);
+  const { deckContext } = useContext(deckState);
   const [openCardCreator, setOpenCardCreator] = useState(false);
-  console.log('DeckDetails', state);
 
   const handleDeleteDeck = () => navigate('/');
 
@@ -108,6 +110,7 @@ const DeckDetails = ({ deckId, location }) => {
           </CSSTransition>
         </div>
       </header>
+      <CardOptions />
       <CardsList
         deck={state.decks.find((deck) => deck.id === Number(deckId))}
       />

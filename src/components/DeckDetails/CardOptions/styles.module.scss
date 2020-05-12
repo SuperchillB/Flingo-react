@@ -1,0 +1,9 @@
+.cardOptions {
+  display: flex;
+  justify-content: space-between;
+  height: 8rem;
+
+  & > div {
+    height: 100%;
+  }
+}

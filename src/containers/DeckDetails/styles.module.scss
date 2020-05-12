@@ -10,10 +10,12 @@
   }
 
   header {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: center;
     @include mq($from: 'medium') {
       flex-direction: row;
     }
@@ -26,19 +28,10 @@
       }
 
       &:last-of-type {
-        display: flex;
-        justify-content: center;
-        width: 60%;
-        height: 6rem;
-        margin-top: 0;
         @include mq($from: 'small') {
-          min-height: 25rem;
-          height: auto;
-          margin-top: 2rem;
-        }
-
-        button {
-          align-self: center;
+          position: absolute;
+          top: 0;
+          right: 0;
         }
       }
     }

@@ -1,12 +1,5 @@
-import React, { useContext } from 'react';
-import {
-  Router,
-  Link,
-  LocationProvider,
-  createHistory,
-  createMemorySource,
-  globalHistory,
-} from '@reach/router';
+import React, { useContext, createContext, useState } from 'react';
+import { Router } from '@reach/router';
 import { store } from '../store';
 import Blob from '../components/common/Blob';
 import Logo from '../components/common/Logo';
@@ -18,6 +11,22 @@ import CardDetails from './CardDetails';
 import QuizPage from './QuizPage';
 import ProfilePage from './ProfilePage';
 import { useBreakpoint } from './BreakpointProvider';
+
+const deckState = createContext(null);
+const { Provider } = deckState;
+
+const DeckStateProvider = ({ children }) => {
+  const [deckContext, setDeckContext] = useState({
+    editMode: false,
+    selectedCards: [],
+  });
+  const updateContext = (prop, value) => {
+    console.log('UPDATECONTEXT', prop, value);
+    setDeckContext((prevContext) => ({ ...prevContext, [prop]: value }));
+  };
+
+  return <Provider value={{ deckContext, updateContext }}>{children}</Provider>;
+};
 
 const App = () => {
   const { currMatch } = useBreakpoint();
@@ -31,35 +40,24 @@ const App = () => {
     });
   };
 
-  // // for some types of tests you want a memory source
-  // let source = createMemorySource('/');
-  // let history = createHistory(source);
-
-  // history.listen((data) => {
-  //   console.log(data);
-  // });
-
-  // globalHistory.listen((data) => {
-  //   console.log(data);
-  // });
-
   return (
     <React.StrictMode>
-      <Blob />
-      {currMatch === 'xs' && <Logo />}
-      <NavBar onSelectLang={selectLangHandler} />
-      {/* <LocationProvider history={history}> */}
-      <Router>
-        <HomePage path="/" />
-        <DeckDetails path="decks/:deckId" />
-        <CardDetails path="cards/:cardId" />
-        <CreatePage path="/create" />
-        <QuizPage path="/quiz" />
-        <ProfilePage path="/profile" />
-      </Router>
-      {/* </LocationProvider> */}
+      <DeckStateProvider>
+        <Blob />
+        {currMatch === 'xs' && <Logo />}
+        <NavBar onSelectLang={selectLangHandler} />
+
+        <Router>
+          <HomePage path="/" />
+          <DeckDetails path="decks/:deckId" />
+          <CardDetails path="cards/:cardId" />
+          <CreatePage path="/create" />
+          <QuizPage path="/quiz" />
+          <ProfilePage path="/profile" />
+        </Router>
+      </DeckStateProvider>
     </React.StrictMode>
   );
 };
 
-export default App;
+export { App, deckState };

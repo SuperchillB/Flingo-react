@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './containers/App';
+import { App } from './containers/App';
 import { store, StateProvider } from './store';
 import { BreakpointProvider } from './containers/BreakpointProvider';
 import { mediaQueries } from './styles/breakpoints';

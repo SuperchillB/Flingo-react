@@ -2,8 +2,34 @@
   background-color: $white;
   height: 5rem;
   border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0px 0px 8px -5px $dark-grey;
+  // overflow: hidden;
+  box-shadow: 0px 0px 0.8rem -0.5rem $dark-grey;
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    left: auto;
+    display: block;
+    height: 3rem;
+    width: 3rem;
+    background: white;
+    border-radius: 10rem;
+    padding: 0.3rem;
+    box-shadow: 0.2rem -0.2rem 0.8rem -0.6rem $dark-grey;
+  }
+
+  & > div {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    display: none;
+  }
+
+  &:hover > div {
+    display: block;
+  }
 
   a {
     display: flex;
@@ -24,7 +50,7 @@
 
       &:last-child {
         justify-content: flex-end;
-        border-left: 0.1rem solid black;
+        // border-left: 0.1rem solid black;
       }
     }
   }

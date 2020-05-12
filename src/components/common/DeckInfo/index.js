@@ -187,11 +187,12 @@ const DeckInfo = ({
             {deckDetailsPage && (
               <Button
                 size="small"
+                style="no-bg"
                 onClickHandler={(e) => handleSubmit(e)}
                 type="submit"
                 value="DELETE_DECK"
               >
-                Delete Deck
+                Delete
               </Button>
             )}
           </div>

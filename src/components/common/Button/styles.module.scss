@@ -35,6 +35,15 @@
     padding: 1rem 2rem;
   }
 
+  &:global(.no-bg) {
+    background-color: transparent;
+    color: $dark-grey;
+
+    &:hover {
+      background-color: $light-grey !important;
+    }
+  }
+
   &:not([disabled]):hover {
     background: darken($flingo-darkBlue, 5%);
   }

@@ -101,6 +101,23 @@
       border: none;
       height: 3rem;
 
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: $mid-grey;
+      }
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $mid-grey;
+      }
+      &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: $mid-grey;
+      }
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        color: $mid-grey;
+      }
+
       &:focus {
         border-color: transparent !important;
 
