@@ -59,6 +59,7 @@
       "toLang": "fr",
       "notes": "Just some notes",
       "tags": [],
+      "quiz": true,
       "deckId": [2],
       "languageId": [2]
     },
@@ -70,6 +71,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [1],
       "languageId": [2]
     },
@@ -81,6 +83,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [1],
       "languageId": [2]
     },
@@ -92,6 +95,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [3],
       "languageId": [2]
     },
@@ -103,6 +107,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [4, 7],
       "languageId": [2]
     },
@@ -114,6 +119,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [6],
       "languageId": [2]
     },
@@ -125,6 +131,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [3],
       "languageId": [2]
     },
@@ -136,6 +143,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [6],
       "languageId": [2]
     },
@@ -147,6 +155,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [6],
       "languageId": [2]
     },
@@ -158,6 +167,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [5],
       "languageId": [2]
     },
@@ -169,6 +179,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [5],
       "languageId": [2]
     },
@@ -180,6 +191,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [2],
       "languageId": [2]
     },
@@ -191,6 +203,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [1],
       "languageId": [2]
     },
@@ -202,6 +215,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [2],
       "languageId": [2]
     },
@@ -213,6 +227,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [4, 7],
       "languageId": [2]
     },
@@ -224,6 +239,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [4, 7],
       "languageId": [2]
     },
@@ -235,6 +251,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [2],
       "languageId": [2]
     },
@@ -246,6 +263,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [3],
       "languageId": [2]
     },
@@ -257,6 +275,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [1],
       "languageId": [2]
     },
@@ -268,6 +287,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [4],
       "languageId": [2]
     },
@@ -279,6 +299,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [6],
       "languageId": [2]
     },
@@ -290,6 +311,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [2],
       "languageId": [2]
     },
@@ -301,6 +323,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [3],
       "languageId": [2]
     },
@@ -312,6 +335,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [2],
       "languageId": [2]
     },
@@ -323,6 +347,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [4],
       "languageId": [2]
     },
@@ -334,6 +359,7 @@
       "toLang": "fr",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [6],
       "languageId": [2]
     },
@@ -346,6 +372,7 @@
       "toLang": "ES",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [9],
       "languageId": [3]
     },
@@ -357,6 +384,7 @@
       "toLang": "es",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [8],
       "languageId": [3]
     },
@@ -368,6 +396,7 @@
       "toLang": "es",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [8],
       "languageId": [3]
     },
@@ -379,6 +408,7 @@
       "toLang": "es",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [10],
       "languageId": [3]
     },
@@ -390,6 +420,7 @@
       "toLang": "es",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [10],
       "languageId": [3]
     },
@@ -401,6 +432,7 @@
       "toLang": "es",
       "notes": "",
       "tags": [],
+      "quiz": true,
       "deckId": [9],
       "languageId": [3]
     }

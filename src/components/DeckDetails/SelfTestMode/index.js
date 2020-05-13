@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ToggleSwitch from '../../common/ToggleSwitch';
+import { deckState } from '../../../containers/App';
 
-const SelfTestMode = ({ onToggleSelfTestMode }) => {
+const SelfTestMode = () => {
+  const { deckContext, updateContext } = useContext(deckState);
   const [isActive, setIsActive] = useState(false);
-  const selfTestModehandler = (value) => {
+  const handleSelfTestMode = (value) => {
     setIsActive(value);
+    updateContext('selfTestModeActive', value);
+    updateContext('selfTestModeHideLeft', false);
   };
+
+  const handleSelfTestModeSide = (value) => {
+    updateContext('selfTestModeHideLeft', !value);
+  };
+
+  // selfTestModeActive: false,
+  // selfTestModeSide: 'to',
 
   return (
     <div>
@@ -13,15 +24,15 @@ const SelfTestMode = ({ onToggleSelfTestMode }) => {
         idAttr="selfTestMode"
         labelLeft="Self-Test Mode"
         type="single"
-        onClickHandler={(e) => selfTestModehandler(e.target.checked)}
+        onClickHandler={(e) => handleSelfTestMode(e.target.checked)}
       />
-      {isActive && (
+      {deckContext.selfTestModeActive && (
         <ToggleSwitch
           idAttr="selfTestMode"
           labelLeft="Hide left"
           labelRight="Hide right"
           type="double"
-          onClickHandler={(e) => onToggleSelfTestMode(e.target.checked)}
+          onClickHandler={(e) => handleSelfTestModeSide(e.target.checked)}
         />
       )}
     </div>

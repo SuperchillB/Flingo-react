@@ -16,6 +16,7 @@ const CardDetails = ({ cardId, location }) => {
     toLang = '',
     notes = '',
     tags = [],
+    quiz = true,
     deckId = null,
   } = location.state.card;
   const parentDeck = state.decks.find((d) => d.id === deckId[0]);
@@ -39,6 +40,7 @@ const CardDetails = ({ cardId, location }) => {
             toLang: state.user.targetLang.id,
             notes: cardData.notesInput,
             tags: cardData.tagsList,
+            quiz: cardData.isQuizzed,
             deckId: [deckId[0]],
             languageId: [state.user.targetLang.id],
           }),
@@ -90,6 +92,7 @@ const CardDetails = ({ cardId, location }) => {
         toLang={toLang}
         notes={notes}
         tags={tags}
+        quiz={quiz}
         deckId={deckId[0]}
         cardView={true}
         onSubmit={handleSubmittedCard}

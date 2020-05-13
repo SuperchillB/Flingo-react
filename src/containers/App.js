@@ -10,7 +10,9 @@ import DeckDetails from './DeckDetails';
 import CardDetails from './CardDetails';
 import QuizPage from './QuizPage';
 import ProfilePage from './ProfilePage';
+import { Modal } from '../components/common/Modal';
 import { useBreakpoint } from './BreakpointProvider';
+import { ModalProvider } from '../components/common/Modal';
 
 const deckState = createContext(null);
 const { Provider } = deckState;
@@ -19,6 +21,8 @@ const DeckStateProvider = ({ children }) => {
   const [deckContext, setDeckContext] = useState({
     editMode: false,
     selectedCards: [],
+    selfTestModeActive: false,
+    selfTestModeHideLeft: false,
   });
   const updateContext = (prop, value) => {
     console.log('UPDATECONTEXT', prop, value);
@@ -42,20 +46,22 @@ const App = () => {
 
   return (
     <React.StrictMode>
-      <DeckStateProvider>
-        <Blob />
-        {currMatch === 'xs' && <Logo />}
-        <NavBar onSelectLang={selectLangHandler} />
+      <ModalProvider>
+        <DeckStateProvider>
+          <Blob />
+          {currMatch === 'xs' && <Logo />}
+          <NavBar onSelectLang={selectLangHandler} />
 
-        <Router>
-          <HomePage path="/" />
-          <DeckDetails path="decks/:deckId" />
-          <CardDetails path="cards/:cardId" />
-          <CreatePage path="/create" />
-          <QuizPage path="/quiz" />
-          <ProfilePage path="/profile" />
-        </Router>
-      </DeckStateProvider>
+          <Router>
+            <HomePage path="/" />
+            <DeckDetails path="decks/:deckId" />
+            <CardDetails path="cards/:cardId" />
+            <CreatePage path="/create" />
+            <QuizPage path="/quiz" />
+            <ProfilePage path="/profile" />
+          </Router>
+        </DeckStateProvider>
+      </ModalProvider>
     </React.StrictMode>
   );
 };

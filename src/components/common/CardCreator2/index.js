@@ -8,7 +8,12 @@ import CreateIcon from '../../../assets/flingo-icons-plus.svg';
 import styles from './styles.module.scss';
 import { useBreakpoint } from '../../../containers/BreakpointProvider';
 
-const CardCreator2 = ({ deckId = null, onAddCard, onClosePanel }) => {
+const CardCreator2 = ({
+  deckId = null,
+  onAddCard,
+  onClosePanel,
+  modal = true,
+}) => {
   const { currMatch } = useBreakpoint();
   const { state, dispatch } = useContext(store);
 
@@ -26,6 +31,7 @@ const CardCreator2 = ({ deckId = null, onAddCard, onClosePanel }) => {
           toLang: state.user.targetLang.id,
           notes: cardData.notesInput,
           tags: cardData.tagsList,
+          quiz: true,
           deckId: [deckId],
           languageId: [state.user.targetLang.id],
         }),
@@ -70,14 +76,23 @@ const CardCreator2 = ({ deckId = null, onAddCard, onClosePanel }) => {
   }, []);
 
   return (
-    <div className={styles.cardCreator}>
-      <CreateIcon onClick={onClosePanel} />
-      <CardForm
-        deckId={deckId}
-        deckView={true}
-        onSubmit={saveCard} // No need to catch e.target.value since CardCreator only does POST requests
-      />
-    </div>
+    <>
+      {modal ? (
+        <div className={styles.cardCreator}>
+          <CreateIcon onClick={onClosePanel} />
+          <CardForm
+            deckId={deckId}
+            deckView={true}
+            onSubmit={saveCard} // No need to catch e.target.value since CardCreator only does POST requests
+          />
+        </div>
+      ) : (
+        <CardForm
+          deckId={deckId}
+          onSubmit={saveCard} // No need to catch e.target.value since CardCreator only does POST requests
+        />
+      )}
+    </>
   );
 };
 

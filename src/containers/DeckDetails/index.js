@@ -110,7 +110,7 @@ const DeckDetails = ({ deckId, location }) => {
           </CSSTransition>
         </div>
       </header>
-      <CardOptions />
+      <CardOptions deckId={Number(deckId)} />
       <CardsList
         deck={state.decks.find((deck) => deck.id === Number(deckId))}
       />

@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { store } from '../../store';
 import DeckInfo from '../../components/common/DeckInfo';
 import DeckSelection from '../../components/CreatePage/DeckSelection';
-import CardCreator from '../../components/common/CardCreator';
+import CardCreator2 from '../../components/common/CardCreator2';
 import { navigate } from '@reach/router';
 import styles from './styles.module.scss';
 
@@ -30,7 +30,11 @@ const CreatePage = ({ location }) => {
       )}
       <div>
         <p>Create a card</p>
-        <CardCreator deckId={deckId} onAddCard={handleSaveCard} />
+        <CardCreator2
+          deckId={deckId}
+          onAddCard={handleSaveCard}
+          modal={false}
+        />
       </div>
     </div>
   );

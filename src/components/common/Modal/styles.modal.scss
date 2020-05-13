@@ -1,0 +1,48 @@
+.modalOverlay {
+  z-index: 98;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  .modalContainer {
+    z-index: 99;
+    position: relative;
+    width: 100%;
+    max-width: 32rem;
+    max-height: 100%;
+    margin: 0 auto;
+
+    .modalClose {
+      height: 3rem;
+      width: 3rem;
+      transform: rotateZ(45deg);
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.5rem;
+      border: 0;
+      -webkit-appearance: none;
+      background: none;
+      cursor: pointer;
+
+      path {
+        fill: $dark-grey;
+        stroke: $dark-grey;
+      }
+    }
+
+    .modalBody {
+      padding: 2rem 2.4rem;
+      border-radius: 0.4rem;
+      background-color: $white;
+    }
+  }
+}

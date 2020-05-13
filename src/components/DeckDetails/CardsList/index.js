@@ -32,6 +32,12 @@ const CardsList = ({ deck = { cards: [] } }) => {
     // const editMode = cards.some((card) => card.isSelected);
   };
 
+  useEffect(() => {
+    return () => {
+      updateContext('selectedCards', []);
+    };
+  }, []);
+
   // useEffect(() => {
   //   const cardsList = deck.cards.map((card) => ({
   //     ...card,

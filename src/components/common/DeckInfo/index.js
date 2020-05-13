@@ -110,7 +110,7 @@ const DeckInfo = ({
         );
         // Don't add empty cards property here or else existing cards will be gone
         data = { ...response.data };
-        // Payload in dispatch functino
+        // Payload in dispatch function
         payload = { deck: data };
       }
       // DELETE

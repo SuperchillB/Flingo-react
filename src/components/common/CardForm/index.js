@@ -10,6 +10,7 @@ const CardForm = ({
   toLang = '',
   notes = '',
   tags = [],
+  quiz = true,
   deckId = null,
   cardView = false,
   deckView = false,
@@ -19,6 +20,7 @@ const CardForm = ({
   const [toInput, setToInput] = useState(to);
   const [notesInput, setNotesInput] = useState(notes);
   const [tagsList, setTagsList] = useState(tags);
+  const [isQuizzed, setIsQuizzed] = useState(quiz);
   const [disabledSave, setDisabledSave] = useState(true);
   const fromRef = useRef(fromInput);
   const toRef = useRef(toInput);
@@ -27,7 +29,7 @@ const CardForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const cardData = { fromInput, toInput, notesInput, tagsList };
+    const cardData = { fromInput, toInput, notesInput, tagsList, isQuizzed };
     onSubmit({ actionType: e.target.value, cardData });
     setFromInput('');
     setToInput('');

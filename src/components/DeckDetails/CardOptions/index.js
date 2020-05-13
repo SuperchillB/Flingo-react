@@ -5,7 +5,7 @@ import SortBy from '../../common/SortBy';
 import { deckState } from '../../../containers/App';
 import styles from './styles.module.scss';
 
-const CardOptions = () => {
+const CardOptions = ({ deckId }) => {
   const { deckContext } = useContext(deckState);
 
   return (
@@ -14,7 +14,9 @@ const CardOptions = () => {
       <div>
         <SortBy />
       </div>
-      {deckContext.selectedCards.length > 0 && <SelectedCardActions />}
+      {deckContext.selectedCards.length > 0 && (
+        <SelectedCardActions deckId={deckId} />
+      )}
     </div>
   );
 };

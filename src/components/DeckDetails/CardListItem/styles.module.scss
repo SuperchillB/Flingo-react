@@ -37,11 +37,26 @@
     height: 100%;
     padding: 0.5rem 1rem;
 
-    div {
+    div:not(.showHider) {
       width: 50%;
       height: 100%;
       display: flex;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+
+      & > div {
+        border: none;
+        display: block;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: $dark-grey;
+        top: 0;
+        left: 0;
+        transition: transform ease 0.2s;
+      }
 
       &:first-child {
         justify-content: flex-start;
@@ -52,6 +67,26 @@
         justify-content: flex-end;
         // border-left: 0.1rem solid black;
       }
+
+      &:hover .fromHidden {
+        transform: translateX(-100%);
+      }
+      &:hover .toHidden {
+        transform: translateX(100%);
+      }
+    }
+
+    .showHider {
+      opacity: 1 !important;
+      // border: none;
+      // display: block;
+      // height: 100%;
+      // width: 100%;
+      // position: absolute;
+      // background: $dark-grey;
+      // top: 0;
+      // left: 0;
+      // transition: transform ease 0.2s;
     }
   }
 }

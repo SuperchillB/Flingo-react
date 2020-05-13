@@ -80,15 +80,15 @@ export default class API {
   };
 
   // PATCH
-  patchDeck = ({ id = null, deck = {} }, config = {}) => {
-    if ((!id || typeof id !== 'number') && (!deck || isEmpty(deck)))
+  patchDeck = ({ id = null, props = {} }, config = {}) => {
+    if ((!id || typeof id !== 'number') && (!props || isEmpty(props)))
       return false;
-    return axios.patch(`${this.url}/${API_PATH.DECKS}/${id}`, deck, config);
+    return axios.patch(`${this.url}/${API_PATH.DECKS}/${id}`, props, config);
   };
-  patchCard = ({ id = null, card = {} }, config = {}) => {
-    if ((!id || typeof id !== 'number') && (!card || isEmpty(card)))
+  patchCard = ({ id = null, props = {} }, config = {}) => {
+    if ((!id || typeof id !== 'number') && (!props || isEmpty(props)))
       return false;
-    return axios.patch(`${this.url}/${API_PATH.CARDS}/${id}`, card, config);
+    return axios.patch(`${this.url}/${API_PATH.CARDS}/${id}`, props, config);
   };
 
   // DELETE
