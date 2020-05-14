@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { Link } from '@reach/router';
 import styles from './styles.module.scss';
 import Checkbox from '../../common/Checkbox';
-import NoQuiz from '../../../assets/flingo-icons-no-quiz.svg';
+import NoQuizIcon from '../../../assets/flingo-icons-no-quiz.svg';
 import { deckState } from '../../../containers/App';
 
 const CardListItem = ({ card, onSelectCard }) => {
   const { deckContext } = useContext(deckState);
   const [isQuizzed, setIsQuizzed] = useState(true);
-  const { id, from, to, fromLang, toLang } = card;
+  const { id, from, to, fromLang, toLang, quiz } = card;
 
   return (
     <li className={styles.cardListItem} data-id={id}>
@@ -16,7 +16,7 @@ const CardListItem = ({ card, onSelectCard }) => {
         idAttr="selectCard"
         onClickHandler={(e) => onSelectCard(e.target.checked, card.id)}
       />
-      {!isQuizzed && <NoQuiz />}
+      {!quiz && <NoQuizIcon />}
       <Link to={`/cards/${id}`} state={{ card }}>
         <div>
           {/* {deckContext.selfTestModeActive &&

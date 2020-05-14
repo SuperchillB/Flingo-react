@@ -6,9 +6,12 @@ import API from '../../utils/apiUtils';
 import { API_BASE_URL } from '../../constants/apiConstants';
 import axios from 'axios';
 import styles from './styles.module.scss';
+import { Modal, modalState } from '../../components/common/Modal';
+import DeleteConfirm from '../../components/common/DeleteConfirm';
 
 const CardDetails = ({ cardId, location }) => {
   const { state, dispatch } = useContext(store);
+  const { modalContext, updateModalContext } = useContext(modalState);
   const {
     from = '',
     fromLang = '',
@@ -21,8 +24,17 @@ const CardDetails = ({ cardId, location }) => {
   } = location.state.card;
   const parentDeck = state.decks.find((d) => d.id === deckId[0]);
 
+  const testHandler = (value) => {
+    console.log('TEST DELETE: ', value);
+    updateModalContext('isOpen', false);
+  };
+
+  const confirmDeleteHandler = () => {
+    updateModalContext('isOpen', true);
+  };
+
   const handleSubmittedCard = async ({ actionType, cardData }) => {
-    console.log(actionType, cardData);
+    console.warn(actionType, cardData);
     // Create API instance
     const api = new API({ url: API_BASE_URL.USERDATA[process.env.NODE_ENV] });
     // Create new token for the request
@@ -68,6 +80,8 @@ const CardDetails = ({ cardId, location }) => {
         type: actionType,
         payload,
       });
+      // Close modal if open
+      updateModalContext('isOpen', false);
       // Navigate back to parent deck
       navigate(`/decks/${deckId[0]}`);
     } catch (error) {
@@ -96,7 +110,16 @@ const CardDetails = ({ cardId, location }) => {
         deckId={deckId[0]}
         cardView={true}
         onSubmit={handleSubmittedCard}
+        onDelete={confirmDeleteHandler}
       />
+      <Modal>
+        <DeleteConfirm
+          label="Delete card?"
+          onCancel={() => updateModalContext('isOpen', false)}
+          onDelete={handleSubmittedCard}
+          buttonVal="DELETE_CARD"
+        />
+      </Modal>
     </div>
   );
 };

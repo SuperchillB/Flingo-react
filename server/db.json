@@ -121,12 +121,20 @@
       ]
     },
     {
-      "name": "Test",
-      "description": "some tests",
+      "id": 11,
+      "name": "Zesticle mah clavicle",
+      "description": "furry ballz",
       "languageId": [
         2
+      ]
+    },
+    {
+      "name": "Spanish test",
+      "description": "yep",
+      "languageId": [
+        3
       ],
-      "id": 11
+      "id": 12
     }
   ],
   "cards": [
@@ -595,11 +603,12 @@
       ]
     },
     {
-      "from": "Something",
+      "id": 33,
+      "from": "Tests",
       "fromLang": 1,
-      "to": "Quelque chose",
+      "to": "Tests",
       "toLang": 2,
-      "notes": "yep",
+      "notes": "lyuwgef ",
       "tags": [],
       "quiz": true,
       "deckId": [
@@ -607,15 +616,15 @@
       ],
       "languageId": [
         2
-      ],
-      "id": 33
+      ]
     },
     {
-      "from": "Again",
+      "id": 34,
+      "from": "Turtle",
       "fromLang": 1,
-      "to": "Encore",
+      "to": "Tortue",
       "toLang": 2,
-      "notes": "yeyeye",
+      "notes": "I iz smartz",
       "tags": [],
       "quiz": false,
       "deckId": [
@@ -623,8 +632,39 @@
       ],
       "languageId": [
         2
+      ]
+    },
+    {
+      "id": 35,
+      "from": "Eyebrows",
+      "fromLang": 1,
+      "to": "Sourcils",
+      "toLang": 2,
+      "notes": "",
+      "tags": [],
+      "quiz": false,
+      "deckId": [
+        11
       ],
-      "id": 34
+      "languageId": [
+        2
+      ]
+    },
+    {
+      "id": 36,
+      "from": "Tests",
+      "fromLang": 1,
+      "to": "Testings",
+      "toLang": 3,
+      "notes": "",
+      "tags": [],
+      "quiz": true,
+      "deckId": [
+        12
+      ],
+      "languageId": [
+        3
+      ]
     }
   ]
 }

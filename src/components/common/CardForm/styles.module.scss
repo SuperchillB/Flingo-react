@@ -38,6 +38,28 @@
       flex-direction: column;
       align-items: center;
       // height: 50%;
+
+      button:last-of-type {
+        position: absolute;
+        top: -1rem;
+        right: 10rem;
+
+        svg {
+          margin-right: 1rem;
+          height: 2rem;
+          width: 2rem;
+          transition: transform ease 0.2s;
+        }
+
+        &:hover svg {
+          transform: scale(1.1);
+        }
+
+        .quizzed path {
+          fill: $flingo-yellow;
+          stroke: $flingo-yellow;
+        }
+      }
     }
 
     &__notesAddCard {
@@ -55,6 +77,32 @@
 
     &__buttons {
       margin-bottom: 3rem;
+
+      button:last-of-type:global(.no-bg) {
+        position: absolute;
+        top: -1rem;
+        right: 0;
+
+        svg {
+          margin-right: 1rem;
+          height: 2rem;
+          width: 2rem;
+
+          path:not(:last-of-type) {
+            fill: $dark-grey;
+            stroke: $dark-grey;
+          }
+        }
+
+        &:hover {
+          color: $flingo-red;
+
+          path:not(:last-of-type) {
+            fill: $flingo-red;
+            stroke: $flingo-red;
+          }
+        }
+      }
     }
 
     // &__fromTo {

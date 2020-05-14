@@ -1,5 +1,5 @@
 .homePage {
-  padding: 0 1rem;
+  padding: 0 2rem;
   margin-bottom: 8rem;
   @include mq($from: 'small') {
     margin: 0;
@@ -13,8 +13,9 @@
   }
 
   .homePageInner {
-    margin-top: 3rem;
     width: 100%;
+    max-width: 75rem;
+    margin: 3rem auto 0;
 
     & > div {
       padding: 3rem 0;

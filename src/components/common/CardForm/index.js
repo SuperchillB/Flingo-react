@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import InputField from '../InputField';
 import Button from '../Button';
+import Trash from '../../../assets/flingo-icons-bin.svg';
+import QuizIcon from '../../../assets/flingo-icons-quiz.svg';
+import NoQuizIcon from '../../../assets/flingo-icons-no-quiz.svg';
 import styles from './styles.module.scss';
 
 const CardForm = ({
@@ -15,6 +18,7 @@ const CardForm = ({
   cardView = false,
   deckView = false,
   onSubmit = () => {},
+  onDelete = () => {},
 }) => {
   const [fromInput, setFromInput] = useState(from);
   const [toInput, setToInput] = useState(to);
@@ -26,15 +30,25 @@ const CardForm = ({
   const toRef = useRef(toInput);
   const notesRef = useRef(notesInput);
   const tagsRef = useRef(tagsList);
+  const isMounted = useRef(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  const handleSubmit = ({ e, value }) => {
+    if (e) e.preventDefault();
     const cardData = { fromInput, toInput, notesInput, tagsList, isQuizzed };
-    onSubmit({ actionType: e.target.value, cardData });
+    // onSubmit({ actionType: e.target.value, cardData });
+    onSubmit({ actionType: value, cardData });
     setFromInput('');
     setToInput('');
     setNotesInput('');
     setTagsList([]);
+    setIsQuizzed(true);
+    isMounted.current = false;
+  };
+
+  const handleHideFromQuiz = (e) => {
+    setIsQuizzed(!isQuizzed);
+    handleSubmit({ e });
   };
 
   // const handleDirty = (value, stateValue, stateValueUpdater) => {
@@ -49,6 +63,15 @@ const CardForm = ({
       setDisabledSave(false);
     }
   };
+
+  // useEffect(() => {
+  //   if (isMounted.current) {
+  //     handleSubmit({ value: 'UPDATE_CARD' });
+  //     isMounted.current = false;
+  //   } else {
+  //     isMounted.current = true;
+  //   }
+  // }, [isQuizzed]);
 
   return (
     <div className={styles.cardFormContainer}>
@@ -86,12 +109,26 @@ const CardForm = ({
             }
           />
           {cardView && (
-            <InputField
-              classNames={`input--pill ${deckView && 'grey-bg'}`}
-              id="tagsInput"
-              type="text"
-              placeholder="Tags"
-            />
+            <>
+              <InputField
+                classNames={`input--pill ${deckView && 'grey-bg'}`}
+                id="tagsInput"
+                type="text"
+                placeholder="Tags"
+              />
+              <Button
+                onClickHandler={() => setIsQuizzed(!isQuizzed)}
+                type="button"
+                style="no-bg"
+                isDisabled={false}
+                value="UPDATE_CARD"
+              >
+                {isQuizzed && <NoQuizIcon />}
+                {isQuizzed && 'Hide from quiz'}
+                {!isQuizzed && <QuizIcon className={styles.quizzed} />}
+                {!isQuizzed && 'Show in quiz'}
+              </Button>
+            </>
           )}
         </div>
         {/* <div className={styles.cardForm__notesAddCard}>
@@ -109,7 +146,8 @@ const CardForm = ({
         <div className={styles.cardForm__buttons}>
           {!cardView ? (
             <Button
-              onClickHandler={(e) => handleSubmit(e)}
+              // onClickHandler={(e) => handleSubmit(e)}
+              onClickHandler={(e) => handleSubmit({ e, value: e.target.value })}
               type="submit"
               isDisabled={!deckId || disabledSave}
               value="ADD_CARD"
@@ -119,19 +157,31 @@ const CardForm = ({
           ) : (
             <>
               <Button
-                onClickHandler={(e) => handleSubmit(e)}
+                // onClickHandler={(e) => handleSubmit(e)}
+                onClickHandler={(e) =>
+                  handleSubmit({ e, value: e.target.value })
+                }
                 type="submit"
                 isDisabled={disabledSave}
                 value="UPDATE_CARD"
               >
                 Save
               </Button>
-              <Button
+              {/* <Button
                 onClickHandler={(e) => handleSubmit(e)}
-                type="submit"
+                type="button"
+                style="no-bg"
+                isDisabled={false}
+                value="DELETE_CARD"
+              > */}
+              <Button
+                onClickHandler={onDelete}
+                type="button"
+                style="no-bg"
                 isDisabled={false}
                 value="DELETE_CARD"
               >
+                <Trash />
                 Delete
               </Button>
             </>

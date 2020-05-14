@@ -1,0 +1,15 @@
+.deleteConfirm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 12rem;
+  padding: 1rem;
+
+  & > div:last-of-type {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}

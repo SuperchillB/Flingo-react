@@ -36,6 +36,8 @@
   }
 
   &:global(.no-bg) {
+    display: inline-flex;
+    align-items: center;
     background-color: transparent;
     color: $dark-grey;
 

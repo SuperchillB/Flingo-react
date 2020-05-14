@@ -2,10 +2,13 @@ import React, { useState, useContext } from 'react';
 import { store } from '../../../store';
 import InputField from '../InputField';
 import Button from '../Button';
+import Trash from '../../../assets/flingo-icons-bin.svg';
 import API from '../../../utils/apiUtils';
 import { API_BASE_URL } from '../../../constants/apiConstants';
 import axios from 'axios';
 import styles from './styles.module.scss';
+import { Modal, modalState } from '../Modal';
+import DeleteConfirm from '../DeleteConfirm';
 
 const DeckInfo = ({
   id = null,
@@ -19,6 +22,7 @@ const DeckInfo = ({
   deckDetailsPage = false,
 }) => {
   const { state, dispatch } = useContext(store);
+  const { modalContext, updateModalContext } = useContext(modalState);
   const [deckData, setDeckData] = useState({
     id,
     name,
@@ -36,9 +40,13 @@ const DeckInfo = ({
     onHideDropdown,
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const actionType = e.target.value;
+  const confirmDeleteHandler = () => {
+    updateModalContext('isOpen', true);
+  };
+
+  const handleSubmit = ({ actionType, event }) => {
+    event.preventDefault();
+    // const actionType = e.target.value;
     // TODO: Add some sanitisation/validation rules
     if (actionType === 'DELETE_DECK') {
       makeDeckRequest(actionType);
@@ -127,7 +135,11 @@ const DeckInfo = ({
       // Tell parent new deck is created so CardCreator can enable card creation
       // ? ONLY FOR POST? OR FOR PUT TOO?
       if (actionType === 'ADD_DECK') onSaveDeck(data.id);
-      if (actionType === 'DELETE_DECK') onDeleteDeck();
+      if (actionType === 'DELETE_DECK') {
+        onDeleteDeck();
+        // Close modal if open
+        updateModalContext('isOpen', false);
+      }
     } catch (error) {
       dispatch({
         type: 'ERROR',
@@ -177,7 +189,9 @@ const DeckInfo = ({
             )}
             <Button
               size="small"
-              onClickHandler={(e) => handleSubmit(e)}
+              onClickHandler={(e) =>
+                handleSubmit({ actionType: e.target.value, event: e })
+              }
               type="submit"
               isDisabled={deckCreated}
               value={id ? 'UPDATE_DECK' : 'ADD_DECK'}
@@ -185,19 +199,35 @@ const DeckInfo = ({
               Save
             </Button>
             {deckDetailsPage && (
+              // <Button
+              //   size="small"
+              //   style="no-bg"
+              //   onClickHandler={(e) => handleSubmit(e)}
+              //   type="submit"
+              //   value="DELETE_DECK"
+              // >
               <Button
                 size="small"
                 style="no-bg"
-                onClickHandler={(e) => handleSubmit(e)}
-                type="submit"
+                onClickHandler={confirmDeleteHandler}
+                type="button"
                 value="DELETE_DECK"
               >
+                <Trash />
                 Delete
               </Button>
             )}
           </div>
         </div>
       </form>
+      <Modal>
+        <DeleteConfirm
+          label="Delete deck?"
+          onCancel={() => updateModalContext('isOpen', false)}
+          onDelete={handleSubmit}
+          buttonVal="DELETE_DECK"
+        />
+      </Modal>
     </div>
   );
 };

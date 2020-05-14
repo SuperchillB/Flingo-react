@@ -27,8 +27,8 @@
 
       &:hover {
         path:not(:last-of-type) {
-          fill: #f5d76e;
-          stroke: #f5d76e;
+          fill: $flingo-yellow;
+          stroke: $flingo-yellow;
         }
       }
     }
@@ -52,8 +52,8 @@
 
       &:hover {
         path:not(:last-of-type) {
-          fill: #ff5163;
-          stroke: #ff5163;
+          fill: $flingo-red;
+          stroke: $flingo-red;
         }
       }
     }

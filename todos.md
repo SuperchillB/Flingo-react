@@ -1,11 +1,13 @@
 Short term:
 
-- Add delete deck logic from homepage (on hover)
-- Add delete card logic from deck view page (on hover + multiple)
+- Create Loader component (spinner)
 - Fix capital letter logo for decks
 - Make 'save' button in deck view dynamically active (only show when something has changed => new deck info)
 - Make 'update' button in card view dynamically active (only show when something has changed => new card info)
-- Create tags logic (CardDetails)
+- Create custom dropdown component + add functionality to create new language in dropdown
+- Create svg flags
+- Create SearchBar component
+- Add Hide from quiz functionality in CardDetails
 
 ---
 
@@ -27,3 +29,6 @@ Longer term:
 - Add animations (https://www.framer.com/motion/)
 - Test accessibility with react-axe (https://github.com/dequelabs/react-axe)
 - Make blob move when route changes (https://github.com/reach/router/issues/262)
+- Add backend logic for multiple delete/update in single request and re-activate checkbox select multiple when done (decks and cards)
+- Create tags logic (CardDetails)
+- Create placeholder image with flamingo when you create brand new deck

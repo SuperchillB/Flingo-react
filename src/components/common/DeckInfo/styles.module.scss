@@ -46,6 +46,31 @@
       display: flex;
       flex-direction: column;
     }
+
+    & div:last-child {
+      display: flex;
+
+      svg {
+        margin-right: 0.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        transition: transform ease 0.2s;
+
+        path:not(:last-of-type) {
+          fill: $dark-grey;
+          stroke: $dark-grey;
+        }
+      }
+
+      button:last-of-type:not([type='submit']):hover {
+        color: $flingo-red;
+
+        path:not(:last-of-type) {
+          fill: $flingo-red;
+          stroke: $flingo-red;
+        }
+      }
+    }
   }
 
   button {
